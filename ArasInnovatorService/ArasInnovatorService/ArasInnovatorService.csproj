@@ -68,6 +68,7 @@
     <Content Include="OldVersion\GarmentStyleManagementWS.svc" />
     <Content Include="ProductManageService.svc" />
     <Content Include="OldVersion\TrimPartManagementWS.svc" />
+    <Content Include="RefDLL\IOM.dll" />
     <Content Include="Service1.svc" />
     <Content Include="TrimPartManageService.svc" />
     <Content Include="Web.config">
