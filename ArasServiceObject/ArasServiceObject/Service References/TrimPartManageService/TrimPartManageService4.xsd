@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ArasInnovatorService.Common" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ArasInnovatorService.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="SelectionFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttributeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilterType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilterValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Filters" nillable="true" type="tns:ArrayOfSelectionFilter" />
+      <xs:element minOccurs="0" name="SearchOperator" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SelectionFilter" nillable="true" type="tns:SelectionFilter" />
+  <xs:complexType name="ArrayOfSelectionFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SelectionFilter" nillable="true" type="tns:SelectionFilter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSelectionFilter" nillable="true" type="tns:ArrayOfSelectionFilter" />
+</xs:schema>

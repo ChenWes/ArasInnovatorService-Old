@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6AF9CB7D-C3D0-4C20-9F34-A7D94EEAE5ED}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ArasInnovatorService</RootNamespace>
+    <AssemblyName>ArasInnovatorService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IOM, Version=10.0.0.5846, Culture=neutral, PublicKeyToken=524d880b05474146, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IOM.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="OldVersion\FabricPartManagementWS.svc" />
+    <Content Include="FabricPartManageService.svc" />
+    <Content Include="OldVersion\GarmentStyleManagementWS.svc" />
+    <Content Include="ProductManageService.svc" />
+    <Content Include="OldVersion\TrimPartManagementWS.svc" />
+    <Content Include="Service1.svc" />
+    <Content Include="TrimPartManageService.svc" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArasModel\ImageType.cs" />
+    <Compile Include="ArasModel\ItemModel\GarmentStyle\Related\ColorComboColorCode.cs" />
+    <Compile Include="ArasModel\ItemModel\GarmentStyle\GarmentBOM.cs" />
+    <Compile Include="ArasModel\ItemModel\GarmentStyle\Related\PartColorCombo.cs" />
+    <Compile Include="ArasModel\ItemModel\GarmentStyle\YearSeason.cs" />
+    <Compile Include="ArasModel\ItemModel\Part\ColorCode.cs" />
+    <Compile Include="ArasModel\ItemModel\GarmentStyle\Related\GarmentBOMPart.cs" />
+    <Compile Include="ArasModel\ItemModel\GarmentStyle\GarmentStyleYearSeason.cs" />
+    <Compile Include="ArasModel\ItemModel\GarmentStyle\Related\GarmentStyleBOM.cs" />
+    <Compile Include="ArasModel\ItemModel\GarmentStyle\GarmentStyleDocument.cs" />
+    <Compile Include="ArasModel\ItemModel\GarmentStyle\GarmentStyleCAD.cs" />
+    <Compile Include="ArasModel\ItemModel\GarmentStyle\GarmentStyleSketch.cs" />
+    <Compile Include="ArasModel\ItemModel\GarmentStyle\GarmentStyleSizeRangeD1D2.cs" />
+    <Compile Include="ArasModel\ItemModel\GarmentStyle\GarmentStyleSizeRangeD1.cs" />
+    <Compile Include="ArasModel\ItemModel\GarmentStyle\GarmentStyleSizeRange.cs" />
+    <Compile Include="ArasModel\ItemModel\GarmentStyle\GarmentStyleColorWay.cs" />
+    <Compile Include="ArasModel\ItemModel\Part\PartContent.cs" />
+    <Compile Include="ArasModel\ItemModel\Part\PartCAD.cs" />
+    <Compile Include="ArasModel\GarmentStyleClass.cs" />
+    <Compile Include="ArasModel\FabricPartClass.cs" />
+    <Compile Include="ArasModel\ItemModel\GarmentStyle\Garment.cs" />
+    <Compile Include="ArasModel\PublicModel\PublicClass\ImageType.cs" />
+    <Compile Include="ArasModel\ItemModel\Part\ColorCombo.cs" />
+    <Compile Include="ArasModel\ItemModel\Part\PartDocument.cs" />
+    <Compile Include="ArasModel\ItemModel\Part\PartSize.cs" />
+    <Compile Include="ArasModel\ItemModel\Part\Part.cs" />
+    <Compile Include="ArasModel\PublicModel\ArrayOfSelectionFilterBaseType.cs" />
+    <Compile Include="ArasModel\PublicModel\BuyerPO.cs" />
+    <Compile Include="ArasModel\PublicModel\BuyerPOs.cs" />
+    <Compile Include="ArasModel\PublicModel\ColorBaseType.cs" />
+    <Compile Include="ArasModel\PublicModel\ColorBaseTypeDocumentURIs.cs" />
+    <Compile Include="ArasModel\PublicModel\ColorwayBaseType.cs" />
+    <Compile Include="ArasModel\PublicModel\ColorwayBaseTypeDocumentURIs.cs" />
+    <Compile Include="ArasModel\PublicModel\CustomerBaseType.cs" />
+    <Compile Include="ArasModel\PublicModel\FabricBOMItemBaseType.cs" />
+    <Compile Include="ArasModel\PublicModel\FabricBOMItemBaseTypeFabricParts.cs" />
+    <Compile Include="ArasModel\PublicModel\FabricComboBaseType.cs" />
+    <Compile Include="ArasModel\PublicModel\FabricContentBaseType.cs" />
+    <Compile Include="ArasModel\PublicModel\FabricPartBaseType.cs" />
+    <Compile Include="ArasModel\PublicModel\FabricPartHeaderType.cs" />
+    <Compile Include="ArasModel\PublicModel\FabricPartList.cs" />
+    <Compile Include="ArasModel\PublicModel\FabricShrinkageBaseType.cs" />
+    <Compile Include="ArasModel\PublicModel\FabricSizeBaseType.cs" />
+    <Compile Include="ArasModel\PublicModel\GarmentBOMItemBaseType.cs" />
+    <Compile Include="ArasModel\PublicModel\GarmentBOMItemBaseTypeProductSizes.cs" />
+    <Compile Include="ArasModel\PublicModel\GarmentOrder.cs" />
+    <Compile Include="ArasModel\PublicModel\GarmentOrders.cs" />
+    <Compile Include="ArasModel\PublicModel\GarmentShrinkageBaseType.cs" />
+    <Compile Include="ArasModel\PublicModel\GarmentStyleList.cs" />
+    <Compile Include="ArasModel\PublicModel\PriceBaseType.cs" />
+    <Compile Include="ArasModel\PublicModel\Product.cs" />
+    <Compile Include="ArasModel\PublicModel\ProductBaseType.cs" />
+    <Compile Include="ArasModel\PublicModel\ProductBaseTypeFinalDevelopmentSample.cs" />
+    <Compile Include="ArasModel\PublicModel\ProductBaseTypeStyle.cs" />
+    <Compile Include="ArasModel\PublicModel\ProductFeaturesType.cs" />
+    <Compile Include="ArasModel\PublicModel\Products.cs" />
+    <Compile Include="ArasModel\PublicModel\PublicClass\TrimPartClass.cs" />
+    <Compile Include="ArasModel\PublicModel\PublicClass\FabricPartClass.cs" />
+    <Compile Include="ArasModel\PublicModel\PublicClass\ProductClass.cs" />
+    <Compile Include="ArasModel\PublicModel\SeasonEnum.cs" />
+    <Compile Include="ArasModel\PublicModel\SelectionFilterBaseType.cs" />
+    <Compile Include="ArasModel\PublicModel\SizeBaseType.cs" />
+    <Compile Include="ArasModel\PublicModel\SupplierBaseType.cs" />
+    <Compile Include="ArasModel\PublicModel\TrimBOMItemBaseType.cs" />
+    <Compile Include="ArasModel\PublicModel\TrimBOMItemBaseTypeTrimParts.cs" />
+    <Compile Include="ArasModel\PublicModel\TrimBtnLogoBaseType.cs" />
+    <Compile Include="ArasModel\PublicModel\TrimCategoryBaseType.cs" />
+    <Compile Include="ArasModel\PublicModel\TrimPartBaseType.cs" />
+    <Compile Include="ArasModel\PublicModel\TrimPartHeaderType.cs" />
+    <Compile Include="ArasModel\PublicModel\TrimPartList.cs" />
+    <Compile Include="ArasModel\PublicModel\URIDocumentsType.cs" />
+    <Compile Include="ArasModel\PublicModel\YearSeasonBaseType.cs" />
+    <Compile Include="ArasModel\TrimPartClass.cs" />
+    <Compile Include="Common\ClassOperation.cs" />
+    <Compile Include="Common\ClassPro.cs" />
+    <Compile Include="Common\ConditionHelper.cs" />
+    <Compile Include="Common\ConfigHelper.cs" />
+    <Compile Include="Common\ErrorCodeSetting.cs" />
+    <Compile Include="Common\ProcessLink\ClassSetLink.cs" />
+    <Compile Include="Common\ItemConverHelper.cs" />
+    <Compile Include="Common\ItemDownFileHelper.cs" />
+    <Compile Include="Common\LogFileHelper.cs" />
+    <Compile Include="Common\ParseSelectionFilter.cs" />
+    <Compile Include="Common\ProcessLink\ClassGetLink.cs" />
+    <Compile Include="Common\SelectionFilter.cs" />
+    <Compile Include="Common\StringHelper.cs" />
+    <Compile Include="IService1.cs" />
+    <Compile Include="OldVersion\FabricPartManagementWS.svc.cs">
+      <DependentUpon>FabricPartManagementWS.svc</DependentUpon>
+    </Compile>
+    <Compile Include="FabricPartManageService.svc.cs">
+      <DependentUpon>FabricPartManageService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="OldVersion\GarmentStyleManagementWS.svc.cs">
+      <DependentUpon>GarmentStyleManagementWS.svc</DependentUpon>
+    </Compile>
+    <Compile Include="OldVersion\IFabricPartManagementWS.cs" />
+    <Compile Include="IFabricPartManageService.cs" />
+    <Compile Include="OldVersion\IGarmentStyleManagementWS.cs" />
+    <Compile Include="IProductManageService.cs" />
+    <Compile Include="OldVersion\ITrimPartManagementWS.cs" />
+    <Compile Include="ITrimPartManageService.cs" />
+    <Compile Include="ProductManageService.svc.cs">
+      <DependentUpon>ProductManageService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="OldVersion\TrimPartManagementWS.svc.cs">
+      <DependentUpon>TrimPartManagementWS.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Service1.svc.cs">
+      <DependentUpon>Service1.svc</DependentUpon>
+    </Compile>
+    <Compile Include="TrimPartManageService.svc.cs">
+      <DependentUpon>TrimPartManageService.svc</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\ArasInnovatorService.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49504</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49504/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

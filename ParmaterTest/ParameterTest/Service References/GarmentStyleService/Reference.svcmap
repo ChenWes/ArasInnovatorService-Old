@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="833f60e2-3979-43cb-b4de-cf93dfc05afc" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:49504/GarmentStyleManagementWS.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GarmentStyleManagementWS.xsd" MetadataType="Schema" ID="53167299-80ba-4d29-a905-25c07f8a41cb" SourceId="1" SourceUrl="http://localhost:49504/GarmentStyleManagementWS.svc?xsd=xsd0" />
+    <MetadataFile FileName="GarmentStyleManagementWS4.xsd" MetadataType="Schema" ID="44c0ee4f-105d-4a8e-aa62-1c02832b4f7b" SourceId="1" SourceUrl="http://localhost:49504/GarmentStyleManagementWS.svc?xsd=xsd4" />
+    <MetadataFile FileName="GarmentStyleManagementWS1.wsdl" MetadataType="Wsdl" ID="a7e67015-5fea-46cc-9101-89b8c85f02b7" SourceId="1" SourceUrl="http://localhost:49504/GarmentStyleManagementWS.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="GarmentStyleManagementWS3.xsd" MetadataType="Schema" ID="147d1f8a-c022-4457-9693-517ff945a1f2" SourceId="1" SourceUrl="http://localhost:49504/GarmentStyleManagementWS.svc?xsd=xsd3" />
+    <MetadataFile FileName="GarmentStyleManagementWS.disco" MetadataType="Disco" ID="b8b81ca2-47e7-424b-9b3b-0caf0d5a4594" SourceId="1" SourceUrl="http://localhost:49504/GarmentStyleManagementWS.svc?disco" />
+    <MetadataFile FileName="GarmentStyleManagementWS2.xsd" MetadataType="Schema" ID="9d2c5c48-e4a2-4411-a071-ddd994e94cea" SourceId="1" SourceUrl="http://localhost:49504/GarmentStyleManagementWS.svc?xsd=xsd1" />
+    <MetadataFile FileName="GarmentStyleManagementWS.wsdl" MetadataType="Wsdl" ID="1b1af632-c988-454c-ad02-61adeeca0071" SourceId="1" SourceUrl="http://localhost:49504/GarmentStyleManagementWS.svc?wsdl" />
+    <MetadataFile FileName="GarmentStyleManagementWS1.xsd" MetadataType="Schema" ID="fc9aa267-7850-4e76-9d16-63455399b7d3" SourceId="1" SourceUrl="http://localhost:49504/GarmentStyleManagementWS.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

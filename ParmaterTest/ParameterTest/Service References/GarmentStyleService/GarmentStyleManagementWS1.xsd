@@ -1,0 +1,820 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:49504/GarmentStyleManagementWS.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:49504/GarmentStyleManagementWS.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/ArasInnovatorService.Common" />
+  <xs:import schemaLocation="http://localhost:49504/GarmentStyleManagementWS.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="GarmentStyleClass">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayPageIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="DisplayPageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrorCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorDetail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GarmentStyleList" nillable="true" type="tns:ArrayOfGarmentStyle" />
+      <xs:element minOccurs="0" name="GetImageType" type="tns:eumImageType" />
+      <xs:element minOccurs="0" name="GetReturnString" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="KeyColumnsList" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="OperationID" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ArasInnovatorService.Common" minOccurs="0" name="SelectionFilter" nillable="true" type="q2:SelectionFilter" />
+      <xs:element minOccurs="0" name="SuccessFlag" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GarmentStyleClass" nillable="true" type="tns:GarmentStyleClass" />
+  <xs:complexType name="ArrayOfGarmentStyle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GarmentStyle" nillable="true" type="tns:GarmentStyle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGarmentStyle" nillable="true" type="tns:ArrayOfGarmentStyle" />
+  <xs:complexType name="GarmentStyle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CLASSIFICATION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_BRAND_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_BRAND_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_CLASS0" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_CLASS1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_CLASS2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_COLLAR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_COLLECTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_CUFF" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_CUST_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_CUST_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_CUST_STYLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_EMB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_FDS_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_FIT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_GENDER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_MAKING" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_PLACKET" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_POCKET" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_PRT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_SAH" type="xs:float" />
+      <xs:element minOccurs="0" name="CN_SERIES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_SLEEVE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_STYLING" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_WASHING" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONFIG_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CSS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CURRENT_STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CURRENT_STATE_DESC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EFFECTIVE_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GENERATION" type="xs:int" />
+      <xs:element minOccurs="0" name="GarmentStyleBOMList" nillable="true" type="tns:ArrayOfGarmentStyleBOM" />
+      <xs:element minOccurs="0" name="GarmentStyleCADList" nillable="true" type="tns:ArrayOfGarmentStyleCAD" />
+      <xs:element minOccurs="0" name="GarmentStyleColorWayList" nillable="true" type="tns:ArrayOfGarmentStyleColorWay" />
+      <xs:element minOccurs="0" name="GarmentStyleDocumentList" nillable="true" type="tns:ArrayOfGarmentStyleDocument" />
+      <xs:element minOccurs="0" name="GarmentStyleSizeRangeList" nillable="true" type="tns:ArrayOfGarmentStyleSizeRange" />
+      <xs:element minOccurs="0" name="GarmentStyleSketchList" nillable="true" type="tns:ArrayOfGarmentStyleSketch" />
+      <xs:element minOccurs="0" name="GarmentStyleYearSeason" nillable="true" type="tns:ArrayOfGarmentStyleYearSeason" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_CURRENT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_RELEASED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITEM_NUMBER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KEYED_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOCKED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOCKED_BY_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAJOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MANAGED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MINOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_BY_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NEW_VERSION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOT_LOCKABLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OWNED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERMISSION_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERMISSION_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RELEASE_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SUPERSEDED_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TEAM_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="THUMBNAIL" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GarmentStyle" nillable="true" type="tns:GarmentStyle" />
+  <xs:complexType name="ArrayOfGarmentStyleBOM">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GarmentStyleBOM" nillable="true" type="tns:GarmentStyleBOM" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGarmentStyleBOM" nillable="true" type="tns:ArrayOfGarmentStyleBOM" />
+  <xs:complexType name="GarmentStyleBOM">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CLASSIFICATION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_BOM_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_COLORWAY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_THUMBNAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONFIG_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CSS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CURRENT_STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EFFECTIVE_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GARMENT_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GENERATION" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_CURRENT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_RELEASED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KEYED_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOCKED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAJOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MANAGED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MINOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NEW_VERSION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOT_LOCKABLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OWNED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERMISSION_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartList" nillable="true" type="tns:ArrayOfPart" />
+      <xs:element minOccurs="0" name="RELEASE_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SORT_ORDER" type="xs:int" />
+      <xs:element minOccurs="0" name="STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SUPERSEDED_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TEAM_ID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GarmentStyleBOM" nillable="true" type="tns:GarmentStyleBOM" />
+  <xs:complexType name="ArrayOfPart">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Part" nillable="true" type="tns:Part" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPart" nillable="true" type="tns:ArrayOfPart" />
+  <xs:complexType name="Part">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CLASSIFICATION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_AGOA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_BRAND_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_BRAND_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_CLASS0" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_CLASS1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_CLASS2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_COMBO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_CONSTRUCTION" type="xs:int" />
+      <xs:element minOccurs="0" name="CN_CONSTRUCTION2" type="xs:int" />
+      <xs:element minOccurs="0" name="CN_CUST_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_CUST_ITEM_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_CUST_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_DTM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_DYE_METHOD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_EMBROIDERY_SIZE_A_W" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_EMBROIDERY_SIZE_B_W" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_FABRIC_PATTERN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_FABRIC_WEIGHT" type="xs:int" />
+      <xs:element minOccurs="0" name="CN_FABRIC_WIDTH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_FAB_SHK_LEN" type="xs:float" />
+      <xs:element minOccurs="0" name="CN_FAB_SHK_WIDTH" type="xs:float" />
+      <xs:element minOccurs="0" name="CN_FAB_TEST_GRADING" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_FINISHING" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_GMT_SHK_LEN" type="xs:float" />
+      <xs:element minOccurs="0" name="CN_GMT_SHK_WIDTH" type="xs:float" />
+      <xs:element minOccurs="0" name="CN_HANDFEEL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_LOGO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_LOGO_DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_MATERIAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_PLACEMENT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_PPO_AGPO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_PRICE" type="xs:float" />
+      <xs:element minOccurs="0" name="CN_PRINTING" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_PRINTING_METHOD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_PRINTING_SIZE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_PRINTING_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_QUALITY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_REMARKS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_REP_H" type="xs:float" />
+      <xs:element minOccurs="0" name="CN_REP_V" type="xs:float" />
+      <xs:element minOccurs="0" name="CN_SUPPLIER_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_SUPPLIER_ITEM_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_THREAD_COUNT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_THREAD_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_THUMBNAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_WASHING" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_YARN_COUNT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_YARN_COUNT2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONFIG_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COST" type="xs:decimal" />
+      <xs:element minOccurs="0" name="COST_BASIS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CSS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CURRENT_STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CURRENT_STATE_DESC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EFFECTIVE_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EXTERNAL_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXTERNAL_OWNER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXTERNAL_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GENERATION" type="xs:int" />
+      <xs:element minOccurs="0" name="HAS_CHANGE_PENDING" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_CURRENT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_RELEASED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITEM_NUMBER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KEYED_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOCKED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOCKED_BY_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAJOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAKE_BUY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MANAGED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MINOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_BY_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NEW_VERSION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOT_LOCKABLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OWNED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERMISSION_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERMISSION_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartCADList" nillable="true" type="tns:ArrayOfPartCAD" />
+      <xs:element minOccurs="0" name="PartColorComboList" nillable="true" type="tns:ArrayOfPartColorCombo" />
+      <xs:element minOccurs="0" name="PartContentList" nillable="true" type="tns:ArrayOfPartContent" />
+      <xs:element minOccurs="0" name="PartDocumentList" nillable="true" type="tns:ArrayOfPartDocument" />
+      <xs:element minOccurs="0" name="PartSizeList" nillable="true" type="tns:ArrayOfPartSize" />
+      <xs:element minOccurs="0" name="RELEASE_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SUPERSEDED_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TEAM_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UNIT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WEIGHT" type="xs:decimal" />
+      <xs:element minOccurs="0" name="WEIGHT_BASIS" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Part" nillable="true" type="tns:Part" />
+  <xs:complexType name="ArrayOfPartCAD">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PartCAD" nillable="true" type="tns:PartCAD" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPartCAD" nillable="true" type="tns:ArrayOfPartCAD" />
+  <xs:complexType name="PartCAD">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BEHAVIOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CLASSIFICATION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONFIG_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CSS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CURRENT_STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXTERNAL_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXTERNAL_OWNER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXTERNAL_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GENERATION" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_CURRENT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_RELEASED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KEYED_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOCKED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAJOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MANAGED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MINOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NEW_VERSION" type="ser:char" />
+      <xs:element minOccurs="0" name="NOT_LOCKABLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OWNED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERMISSION_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RELATED_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SORT_ORDER" type="xs:int" />
+      <xs:element minOccurs="0" name="SOURCE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEAM_ID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PartCAD" nillable="true" type="tns:PartCAD" />
+  <xs:complexType name="ArrayOfPartColorCombo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PartColorCombo" nillable="true" type="tns:PartColorCombo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPartColorCombo" nillable="true" type="tns:ArrayOfPartColorCombo" />
+  <xs:complexType name="PartColorCombo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BEHAVIOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CLASSIFICATION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONFIG_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CSS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CURRENT_STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColorCodeList" nillable="true" type="tns:ArrayOfColorCode" />
+      <xs:element minOccurs="0" name="GENERATION" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_CURRENT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_RELEASED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KEYED_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOCKED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAJOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MANAGED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MINOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NEW_VERSION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOT_LOCKABLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OWNED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERMISSION_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RELATED_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SORT_ORDER" type="xs:int" />
+      <xs:element minOccurs="0" name="SOURCE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEAM_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="THUMBNAIL" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PartColorCombo" nillable="true" type="tns:PartColorCombo" />
+  <xs:complexType name="ArrayOfColorCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ColorCode" nillable="true" type="tns:ColorCode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfColorCode" nillable="true" type="tns:ArrayOfColorCode" />
+  <xs:complexType name="ColorCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CLASSIFICATION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_CUST_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_LAB_DIP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_PANTONE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_PROGRAM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_THUMBNAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONFIG_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CSS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CURRENT_STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GENERATION" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_CURRENT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_RELEASED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITEM_NUMBER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KEYED_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOCKED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAJOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MANAGED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MINOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NEW_VERSION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOT_LOCKABLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OWNED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERMISSION_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEAM_ID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ColorCode" nillable="true" type="tns:ColorCode" />
+  <xs:complexType name="ArrayOfPartContent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PartContent" nillable="true" type="tns:PartContent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPartContent" nillable="true" type="tns:ArrayOfPartContent" />
+  <xs:complexType name="PartContent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BEHAVIOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CLASSIFICATION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_CONTENT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_CONTENT_RATIO" type="xs:int" />
+      <xs:element minOccurs="0" name="CONFIG_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CSS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CURRENT_STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GENERATION" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_CURRENT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_RELEASED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KEYED_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOCKED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAJOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MANAGED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MINOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NEW_VERSION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOT_LOCKABLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OWNED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERMISSION_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RELATED_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SORT_ORDER" type="xs:int" />
+      <xs:element minOccurs="0" name="SOURCE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEAM_ID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PartContent" nillable="true" type="tns:PartContent" />
+  <xs:complexType name="ArrayOfPartDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PartDocument" nillable="true" type="tns:PartDocument" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPartDocument" nillable="true" type="tns:ArrayOfPartDocument" />
+  <xs:complexType name="PartDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BEHAVIOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CLASSIFICATION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONFIG_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CSS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CURRENT_STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXTERNAL_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXTERNAL_OWNER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXTERNAL_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GENERATION" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_CURRENT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_RELEASED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KEYED_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOCKED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAJOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MANAGED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MINOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NEW_VERSION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOT_LOCKABLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OWNED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERMISSION_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RELATED_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SORT_ORDER" type="xs:int" />
+      <xs:element minOccurs="0" name="SOURCE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEAM_ID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PartDocument" nillable="true" type="tns:PartDocument" />
+  <xs:complexType name="ArrayOfPartSize">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PartSize" nillable="true" type="tns:PartSize" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPartSize" nillable="true" type="tns:ArrayOfPartSize" />
+  <xs:complexType name="PartSize">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BEHAVIOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CLASSIFICATION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_SIZE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_SIZE_DESC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONFIG_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CSS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CURRENT_STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GENERATION" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_CURRENT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_RELEASED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KEYED_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOCKED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAJOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MANAGED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MINOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NEW_VERSION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOT_LOCKABLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OWNED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERMISSION_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RELATED_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SORT_ORDER" type="xs:int" />
+      <xs:element minOccurs="0" name="SOURCE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEAM_ID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PartSize" nillable="true" type="tns:PartSize" />
+  <xs:complexType name="ArrayOfGarmentStyleCAD">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GarmentStyleCAD" nillable="true" type="tns:GarmentStyleCAD" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGarmentStyleCAD" nillable="true" type="tns:ArrayOfGarmentStyleCAD" />
+  <xs:complexType name="GarmentStyleCAD">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BEHAVIOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CLASSIFICATION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONFIG_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CSS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CURRENT_STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GENERATION" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_CURRENT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_RELEASED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KEYED_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOCKED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAJOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MANAGED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MINOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NEW_VERSION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOT_LOCKABLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OWNED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERMISSION_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RELATED_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SORT_ORDER" type="xs:int" />
+      <xs:element minOccurs="0" name="SOURCE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEAM_ID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GarmentStyleCAD" nillable="true" type="tns:GarmentStyleCAD" />
+  <xs:complexType name="ArrayOfGarmentStyleColorWay">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GarmentStyleColorWay" nillable="true" type="tns:GarmentStyleColorWay" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGarmentStyleColorWay" nillable="true" type="tns:ArrayOfGarmentStyleColorWay" />
+  <xs:complexType name="GarmentStyleColorWay">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BEHAVIOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CLASSIFICATION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_BODY_PATTERN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_COLORWAY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_CUST_CW" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_CUST_CWCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_CW_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_LINE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_PLU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_YEARSEASON" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONFIG_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CSS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CURRENT_STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GENERATION" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_CURRENT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_RELEASED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KEYED_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOCKED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAJOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MANAGED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MINOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NEW_VERSION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOT_LOCKABLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OWNED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERMISSION_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RELATED_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SORT_ORDER" type="xs:int" />
+      <xs:element minOccurs="0" name="SOURCE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEAM_ID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GarmentStyleColorWay" nillable="true" type="tns:GarmentStyleColorWay" />
+  <xs:complexType name="ArrayOfGarmentStyleDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GarmentStyleDocument" nillable="true" type="tns:GarmentStyleDocument" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGarmentStyleDocument" nillable="true" type="tns:ArrayOfGarmentStyleDocument" />
+  <xs:complexType name="GarmentStyleDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BEHAVIOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CLASSIFICATION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONFIG_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CSS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CURRENT_STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GENERATION" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_CURRENT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_RELEASED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KEYED_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOCKED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAJOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MANAGED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MINOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NEW_VERSION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOT_LOCKABLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OWNED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERMISSION_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RELATED_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SORT_ORDER" type="xs:int" />
+      <xs:element minOccurs="0" name="SOURCE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEAM_ID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GarmentStyleDocument" nillable="true" type="tns:GarmentStyleDocument" />
+  <xs:complexType name="ArrayOfGarmentStyleSizeRange">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GarmentStyleSizeRange" nillable="true" type="tns:GarmentStyleSizeRange" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGarmentStyleSizeRange" nillable="true" type="tns:ArrayOfGarmentStyleSizeRange" />
+  <xs:complexType name="GarmentStyleSizeRange">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BEHAVIOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CLASSIFICATION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_NOTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_SIZE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_SIZE_CATEGORY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONFIG_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CSS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CURRENT_STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GENERATION" type="xs:int" />
+      <xs:element minOccurs="0" name="GarmentStyleSizeRangeD1List" nillable="true" type="tns:ArrayOfGarmentStyleSizeRangeD1" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_CURRENT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_RELEASED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KEYED_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOCKED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAJOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MANAGED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MINOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NEW_VERSION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOT_LOCKABLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OWNED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERMISSION_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RELATED_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SORT_ORDER" type="xs:int" />
+      <xs:element minOccurs="0" name="SOURCE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEAM_ID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GarmentStyleSizeRange" nillable="true" type="tns:GarmentStyleSizeRange" />
+  <xs:complexType name="ArrayOfGarmentStyleSizeRangeD1">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GarmentStyleSizeRangeD1" nillable="true" type="tns:GarmentStyleSizeRangeD1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGarmentStyleSizeRangeD1" nillable="true" type="tns:ArrayOfGarmentStyleSizeRangeD1" />
+  <xs:complexType name="GarmentStyleSizeRangeD1">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BEHAVIOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CLASSIFICATION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_SIZE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONFIG_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CSS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CURRENT_STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GENERATION" type="xs:int" />
+      <xs:element minOccurs="0" name="GarmentStyleSizeRangeD2List" nillable="true" type="tns:ArrayOfGarmentStyleSizeRangeD1D2" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_CURRENT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_RELEASED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KEYED_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOCKED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAJOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MANAGED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MINOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NEW_VERSION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOT_LOCKABLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OWNED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERMISSION_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RELATED_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SORT_ORDER" type="xs:int" />
+      <xs:element minOccurs="0" name="SOURCE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEAM_ID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GarmentStyleSizeRangeD1" nillable="true" type="tns:GarmentStyleSizeRangeD1" />
+  <xs:complexType name="ArrayOfGarmentStyleSizeRangeD1D2">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GarmentStyleSizeRangeD1D2" nillable="true" type="tns:GarmentStyleSizeRangeD1D2" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGarmentStyleSizeRangeD1D2" nillable="true" type="tns:ArrayOfGarmentStyleSizeRangeD1D2" />
+  <xs:complexType name="GarmentStyleSizeRangeD1D2">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BEHAVIOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CLASSIFICATION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CN_SIZE2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONFIG_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CSS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CURRENT_STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GENERATION" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_CURRENT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_RELEASED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KEYED_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOCKED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAJOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MANAGED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MINOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NEW_VERSION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOT_LOCKABLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OWNED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERMISSION_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RELATED_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SORT_ORDER" type="xs:int" />
+      <xs:element minOccurs="0" name="SOURCE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEAM_ID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GarmentStyleSizeRangeD1D2" nillable="true" type="tns:GarmentStyleSizeRangeD1D2" />
+  <xs:complexType name="ArrayOfGarmentStyleSketch">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GarmentStyleSketch" nillable="true" type="tns:GarmentStyleSketch" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGarmentStyleSketch" nillable="true" type="tns:ArrayOfGarmentStyleSketch" />
+  <xs:complexType name="GarmentStyleSketch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BEHAVIOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CLASSIFICATION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONFIG_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CSS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CURRENT_STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GENERATION" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_CURRENT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_RELEASED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KEYED_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOCKED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAJOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MANAGED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MINOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NEW_VERSION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOT_LOCKABLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OWNED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERMISSION_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RELATED_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SORT_ORDER" type="xs:int" />
+      <xs:element minOccurs="0" name="SOURCE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEAM_ID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GarmentStyleSketch" nillable="true" type="tns:GarmentStyleSketch" />
+  <xs:complexType name="ArrayOfGarmentStyleYearSeason">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GarmentStyleYearSeason" nillable="true" type="tns:GarmentStyleYearSeason" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGarmentStyleYearSeason" nillable="true" type="tns:ArrayOfGarmentStyleYearSeason" />
+  <xs:complexType name="GarmentStyleYearSeason">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BEHAVIOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CLASSIFICATION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONFIG_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CSS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CURRENT_STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GENERATION" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_CURRENT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_RELEASED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KEYED_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOCKED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAJOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MANAGED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MINOR_REV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_ON" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NEW_VERSION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOT_LOCKABLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OWNED_BY_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERMISSION_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RELATED_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SORT_ORDER" type="xs:int" />
+      <xs:element minOccurs="0" name="SOURCE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEAM_ID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GarmentStyleYearSeason" nillable="true" type="tns:GarmentStyleYearSeason" />
+  <xs:simpleType name="eumImageType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UsePrimaryPath" />
+      <xs:enumeration value="UseTempPath" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="eumImageType" nillable="true" type="tns:eumImageType" />
+</xs:schema>

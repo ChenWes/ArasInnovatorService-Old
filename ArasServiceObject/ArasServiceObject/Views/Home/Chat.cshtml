@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "Chat";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chat</h2>
+<div class="container">
+    <input type="text" id="message" />
+    <input type="button" id="sendmessage" value="Send" />
+    <input type="hidden" id="displayname" />
+    <ul id="discussion"></ul>
+</div>
+
+<div class="col-lg-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="pull-right label label-danger">5</div>
+            <div class="pull-right label label-success">12</div>
+            <div class="panel-title">Team messages</div>
+        </div>
+        <!-- START list group-->
+        <div id="div_msg" data-height="180" data-scrollable="" class="list-group">
+            <!-- START list group item-->
+            <!-- END list group item-->            
+        </div>
+        <!-- END list group-->
+        <!-- START panel footer-->
+        <div class="panel-footer clearfix">
+            <div class="input-group">
+                <input type="text" placeholder="Search message .." class="form-control input-sm" />
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-default btn-sm">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        </div>
+        <!-- END panel-footer-->
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/Scripts/jquery.signalR-2.2.0.min.js"></script>
+ 
+    <script src="~/signalr/hubs"></script>
+    <script>
+        $(function () {
+            //创建连接
+            var chat = $.connection.chatHub;//连接的Hub一定要与Hub Class中的名字一样
+            
+
+            //接收
+            chat.client.addNewMessageToPage = function (name, message) {
+                //$('#discussion').append('<li><strong>' + htmlEncode(name)
+                //    + '</strong>: ' + htmlEncode(message) + '</li>');
+                $('#div_msg').append('<a href="#" class="list-group-item"><div class="media-box"><div class="pull-left"><img src="../Content/Images/user/02.jpg" alt="Image" class="media-box-object img-circle thumb32" /></div><div class="media-box-body clearfix"><small class="pull-right">2h</small><strong class="media-box-heading text-primary"><span class="circle circle-success circle-lg text-left"></span>' + name + '</strong><p class="mb-sm"><small>' + message + '</small></p></div></div></a>');
+
+            };
+
+
+            $('#displayname').val(prompt('Enter your name:', ''));
+            $('#message').focus();
+
+            //发送
+            $.connection.hub.start().done(function () {
+                $('#sendmessage').click(function () {
+
+                    chat.server.send($('#displayname').val(), $('#message').val());
+   
+                    $('#message').val('').focus();
+                });
+            });
+
+        });
+
+        function htmlEncode(value) {
+            var encodedValue = $('<div />').text(value).html();
+            return encodedValue;
+        }
+    </script>
+}
+

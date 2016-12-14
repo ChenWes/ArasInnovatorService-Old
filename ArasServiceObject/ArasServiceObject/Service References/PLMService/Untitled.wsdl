@@ -1,0 +1,2549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://www.esquel.com/Product/namespace/" xmlns:tns="http://xmlns.example.com/1448426046182" xmlns:ns5="http://schemas.datacontract.org/2004/07/ArasInnovatorService.Common" xmlns:ns7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ns4="http://esquel.com/ArasService/ProductManageService" xmlns:ns0="http://www.esquel.com/Garment/namespace/" xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:ns3="http://tempuri.org/EscmGo" xmlns:ns8="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel.PublicModel" xmlns:ns1="http://www.tibco.com/schemas/Retail/Resources/Schemas/Schema.xsd" name="Untitled" targetNamespace="http://xmlns.example.com/1448426046182" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ArasInnovatorService.Common" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ArasInnovatorService.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xs:complexType name="ArrayOfSelectionFilter">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="SelectionFilter" nillable="true" type="tns:SelectionFilter" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="FunctionResultEnum">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Succeeded">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Failed">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="ResponseResultNormally">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FunctionResult" type="tns:FunctionResultEnum" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SelectionFilter">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AttributeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FilterType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FilterValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Filters" nillable="true" type="tns:ArrayOfSelectionFilter" />
+          <xs:element minOccurs="0" name="SearchOperator" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfSelectionFilter" nillable="true" type="tns:ArrayOfSelectionFilter" />
+      <xs:element name="FunctionResultEnum" nillable="true" type="tns:FunctionResultEnum" />
+      <xs:element name="ResponseResultNormally" nillable="true" type="tns:ResponseResultNormally" />
+      <xs:element name="SelectionFilter" nillable="true" type="tns:SelectionFilter" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:gmt1="http://www.esquel.com/Garment/namespace/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.esquel.com/Garment/namespace/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="Assortment">
+        <xs:sequence>
+          <xs:element name="assortment_id" type="xs:string" />
+          <xs:element name="user_id" type="xs:string" />
+          <xs:element name="order_date" type="xs:string" />
+          <xs:element name="factory" type="xs:string" />
+          <xs:element name="route" type="xs:string" />
+          <xs:element name="garment_style" type="gmt1:GarmentStyle" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="market_detail" type="gmt1:AssortmentMarket" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AssortmentMarket">
+        <xs:sequence>
+          <xs:element name="market" type="xs:string" />
+          <xs:element name="delivery_date" type="xs:string" />
+          <xs:element minOccurs="0" name="stock_location" type="xs:string" />
+          <xs:element minOccurs="0" name="retail_price" type="xs:string" />
+          <xs:element minOccurs="0" name="retail_currency" type="xs:string" />
+          <xs:element minOccurs="0" name="trade_term" type="xs:string" />
+          <xs:element minOccurs="0" name="ship_mode" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="plu" type="gmt1:PLU" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="BOMContainer">
+        <xs:complexContent mixed="false">
+          <xs:extension base="gmt1:BOMItem">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" ref="gmt1:BOMItem" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="BOMItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BOM_category" type="xs:string" />
+          <xs:element minOccurs="0" name="usage" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Brand">
+        <xs:sequence>
+          <xs:element name="code" type="xs:string" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element minOccurs="0" name="long_desc" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Color">
+        <xs:sequence>
+          <xs:element name="code" type="xs:string" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element minOccurs="0" name="status" type="xs:string" />
+          <xs:element minOccurs="0" name="pantone_no" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="labdip_no" type="xs:string" />
+          <xs:element minOccurs="0" name="program" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="year_season" type="gmt1:YearSeason" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="image" type="gmt1:Document" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Colorway">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" type="xs:string" />
+          <xs:element name="code" type="xs:string" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element minOccurs="0" name="status" type="xs:string" />
+          <xs:element minOccurs="0" name="cust_color_code" type="xs:string" />
+          <xs:element minOccurs="0" name="cust_color_name" type="xs:string" />
+          <xs:element minOccurs="0" name="year_season" type="gmt1:YearSeason" />
+          <xs:element minOccurs="0" name="program" type="xs:string" />
+          <xs:element minOccurs="0" name="line" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="body_pattern" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="image" type="gmt1:Document" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Customer">
+        <xs:sequence>
+          <xs:element name="code" type="xs:string" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element minOccurs="0" name="full_name" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="brand" type="gmt1:Brand" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DimMapFabricColorway">
+        <xs:sequence>
+          <xs:element name="style_colorway" type="gmt1:Colorway" />
+          <xs:element name="fabric" type="gmt1:FabricItem" />
+          <xs:element minOccurs="0" name="combo" type="gmt1:FabricCombo" />
+          <xs:element minOccurs="0" name="fabric_part" type="xs:string" />
+          <xs:element minOccurs="0" name="garment_component" type="xs:string" />
+          <xs:element minOccurs="0" name="cut_way" type="xs:string" />
+          <xs:element minOccurs="0" name="fabric_width" type="xs:string" />
+          <xs:element minOccurs="0" name="ypd" type="xs:float" />
+          <xs:element minOccurs="0" name="piece_fabric_usage" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DimMapFabricSize">
+        <xs:sequence>
+          <xs:element name="style_size_range" type="gmt1:SizeRange" />
+          <xs:element name="fabric" type="gmt1:FabricItem" />
+          <xs:element minOccurs="0" name="fabric_part" type="xs:string" />
+          <xs:element minOccurs="0" name="garment_component" type="xs:string" />
+          <xs:element name="piece_fabric_size" type="gmt1:ItemDimSize" />
+          <xs:element minOccurs="0" name="piece_fabric_usage" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DimMapPrtEmbColorway">
+        <xs:sequence>
+          <xs:element name="style_colorway" type="gmt1:Colorway" />
+          <xs:element name="printing" type="gmt1:PrintingItem" />
+          <xs:element name="combo" type="gmt1:EmbroideryCombo" />
+          <xs:element minOccurs="0" name="quantity" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DimMapTrimColorway">
+        <xs:sequence>
+          <xs:element name="style_colorway" type="gmt1:Colorway" />
+          <xs:element name="trim" type="gmt1:TrimItem" />
+          <xs:element name="trim_color" type="gmt1:TrimColor" />
+          <xs:element minOccurs="0" name="trim_usage" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DimMapTrimSize">
+        <xs:sequence>
+          <xs:element name="style_size_range" type="gmt1:SizeRange" />
+          <xs:element name="trim" type="gmt1:TrimItem" />
+          <xs:element name="trim_size" type="gmt1:ItemDimSize" />
+          <xs:element minOccurs="0" name="usage" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Document">
+        <xs:sequence>
+          <xs:element name="uri" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EmbroidaryItem">
+        <xs:complexContent mixed="false">
+          <xs:extension base="gmt1:Item">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="embroidary_type" type="xs:string" />
+              <xs:element minOccurs="0" name="size_a" type="xs:string" />
+              <xs:element minOccurs="0" name="size_b" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="placement" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="layout" type="gmt1:Document" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="cad_file" type="gmt1:Document" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="combo" type="gmt1:EmbroideryCombo" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="EmbroideryCombo">
+        <xs:sequence>
+          <xs:element name="code" type="xs:int" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="year_season" type="gmt1:YearSeason" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="image" type="gmt1:Document" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="color" type="gmt1:ThreadColor" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FabricCombo">
+        <xs:sequence>
+          <xs:element name="code" type="xs:string" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element minOccurs="0" name="status" type="xs:string" />
+          <xs:element minOccurs="0" name="customer" type="gmt1:Customer" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="year_season" type="gmt1:YearSeason" />
+          <xs:element minOccurs="0" name="program" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="color" type="gmt1:Color" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FabricItem">
+        <xs:complexContent mixed="false">
+          <xs:extension base="gmt1:Item">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="fabrication" type="xs:string" />
+              <xs:element minOccurs="0" name="dye_method" type="xs:string" />
+              <xs:element minOccurs="0" name="finishing" type="xs:string" />
+              <xs:element minOccurs="0" name="fabric_width" type="xs:string" />
+              <xs:element minOccurs="0" name="fabric_pattern" type="xs:string" />
+              <xs:element minOccurs="0" name="printing" type="xs:boolean" />
+              <xs:element minOccurs="0" name="repeat_vertical" type="xs:string" />
+              <xs:element minOccurs="0" name="repeat_horizontal" type="xs:string" />
+              <xs:element minOccurs="0" name="fabric_shrinkage_length" type="xs:float" />
+              <xs:element minOccurs="0" name="fabric_shrinkage_width" type="xs:float" />
+              <xs:element minOccurs="0" name="garment_shrinkage_length" type="xs:float" />
+              <xs:element minOccurs="0" name="garment_shrinkage_width" type="xs:float" />
+              <xs:element minOccurs="0" name="fabric_test_grading" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="ppo_no" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="fabric_layout" type="gmt1:Document" />
+              <xs:element minOccurs="0" name="content" type="xs:string" />
+              <xs:element minOccurs="0" name="content_ratio" type="xs:float" />
+              <xs:element minOccurs="0" name="yarn_type" type="xs:string" />
+              <xs:element minOccurs="0" name="yarn_count_wrap" type="xs:string" />
+              <xs:element minOccurs="0" name="yarn_count_weft" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="combo" type="gmt1:FabricCombo" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="GarmentBOM">
+        <xs:complexContent mixed="false">
+          <xs:extension base="gmt1:BOMContainer">
+            <xs:sequence>
+              <xs:element name="seq_no" type="xs:int" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="fabric_colorway_map" type="gmt1:DimMapFabricColorway" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="trim_colorway_map" type="gmt1:DimMapTrimColorway" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="fabric_size_map" type="gmt1:DimMapFabricSize" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="trim_size_map" type="gmt1:DimMapTrimSize" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="prt_emb_colorway_map" type="gmt1:DimMapPrtEmbColorway" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="GarmentStyle">
+        <xs:complexContent mixed="false">
+          <xs:extension base="gmt1:Product">
+            <xs:sequence>
+              <xs:element name="style_no" type="xs:string" />
+              <xs:element name="version" type="xs:string" />
+              <xs:element minOccurs="0" name="status" type="xs:string" />
+              <xs:element minOccurs="0" name="desc" type="xs:string" />
+              <xs:element minOccurs="0" name="fds_no" type="xs:string" />
+              <xs:element minOccurs="0" name="gender" type="xs:string" />
+              <xs:element minOccurs="0" name="collection" type="xs:string" />
+              <xs:element minOccurs="0" name="series" type="xs:string" />
+              <xs:element minOccurs="0" name="making" type="xs:string" />
+              <xs:element minOccurs="0" name="fit" type="xs:string" />
+              <xs:element minOccurs="0" name="styling" type="xs:string" />
+              <xs:element minOccurs="0" name="collar" type="xs:string" />
+              <xs:element minOccurs="0" name="placket" type="xs:string" />
+              <xs:element minOccurs="0" name="sleeve" type="xs:string" />
+              <xs:element minOccurs="0" name="cuff" type="xs:string" />
+              <xs:element minOccurs="0" name="pocket" type="xs:string" />
+              <xs:element minOccurs="0" name="washing" type="xs:string" />
+              <xs:element minOccurs="0" name="embroidery" type="xs:boolean" />
+              <xs:element minOccurs="0" name="printing" type="xs:boolean" />
+              <xs:element minOccurs="0" name="image" type="gmt1:Document" />
+              <xs:element minOccurs="0" name="paper_pattern" type="xs:string" />
+              <xs:element minOccurs="0" name="sah" type="xs:float" />
+              <xs:element minOccurs="0" name="remarks" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="style_colorway" type="gmt1:Colorway" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="style_size_range" type="gmt1:SizeRange" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="garment_bom" type="gmt1:GarmentBOM" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="plu" type="gmt1:PLU" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="Item">
+        <xs:complexContent mixed="false">
+          <xs:extension base="gmt1:Product">
+            <xs:sequence>
+              <xs:element name="code" type="xs:string" />
+              <xs:element name="version" type="xs:string" />
+              <xs:element minOccurs="0" name="status" type="xs:string" />
+              <xs:element minOccurs="0" name="category" type="xs:string" />
+              <xs:element minOccurs="0" name="desc" type="xs:string" />
+              <xs:element minOccurs="0" name="remarks" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="size" type="gmt1:ItemDimSize" />
+              <xs:element minOccurs="0" name="thumbnail_url" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="ItemBOM">
+        <xs:complexContent mixed="false">
+          <xs:extension base="gmt1:BOMItem">
+            <xs:sequence>
+              <xs:element ref="gmt1:Item" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="ItemDimSize">
+        <xs:sequence>
+          <xs:element name="size" type="xs:string" />
+          <xs:element minOccurs="0" name="size_desc" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Knit">
+        <xs:complexContent mixed="false">
+          <xs:extension base="gmt1:FabricItem">
+            <xs:sequence>
+              <xs:element name="quality_code" type="xs:string" />
+              <xs:element minOccurs="0" name="construction" type="xs:string" />
+              <xs:element minOccurs="0" name="fabric_weight" type="xs:int" />
+              <xs:element minOccurs="0" name="cust_quality_code" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="PLU">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="plu_no" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="sku" type="gmt1:SKU" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="colorway" type="gmt1:Colorway" />
+          <xs:element minOccurs="0" name="garment_style" type="gmt1:GarmentStyle" />
+          <xs:element minOccurs="0" name="assortment_detail" type="gmt1:PLUAssortmentDtl" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PLUAssortmentDtl">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="exfactory_cost" type="xs:float" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PrintingItem">
+        <xs:complexContent mixed="false">
+          <xs:extension base="gmt1:Item">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="printing_type" type="xs:string" />
+              <xs:element minOccurs="0" name="printing_method" type="xs:string" />
+              <xs:element minOccurs="0" name="printing_size" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="placement" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="layout" type="gmt1:Document" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="cad_file" type="gmt1:Document" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="Product">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="product_type" type="xs:string" />
+          <xs:element minOccurs="0" name="product_category" type="xs:string" />
+          <xs:element minOccurs="0" name="sub_category" type="xs:string" />
+          <xs:element minOccurs="0" name="price" type="xs:float" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="year_seasons" type="gmt1:YearSeason" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="supplier" type="gmt1:ProductSupplier" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="customer" type="gmt1:ProductCustomer" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ProductCustomer">
+        <xs:complexContent mixed="false">
+          <xs:extension base="gmt1:Customer">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="cust_ref_code" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="ProductSupplier">
+        <xs:complexContent mixed="false">
+          <xs:extension base="gmt1:Supplier">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="supplier_ref_code" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="SKU">
+        <xs:sequence>
+          <xs:element name="sku_no" type="xs:string" />
+          <xs:element minOccurs="0" name="size_range" type="gmt1:SizeRange" />
+          <xs:element minOccurs="0" name="plu" type="gmt1:PLU" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="assortment_detail" type="gmt1:SKUAssortmentDtl" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SKUAssortmentDtl">
+        <xs:sequence>
+          <xs:element name="store_no" type="xs:string" />
+          <xs:element name="quantity" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SizeRange">
+        <xs:sequence>
+          <xs:element name="code" type="xs:int" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element minOccurs="0" name="long_desc" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="size">
+            <xs:complexType>
+              <xs:simpleContent>
+                <xs:extension base="xs:string">
+                  <xs:attribute name="type" type="xs:string" />
+                </xs:extension>
+              </xs:simpleContent>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Supplier">
+        <xs:sequence>
+          <xs:element name="code" type="xs:string" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element minOccurs="0" name="full_name" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ThreadColor">
+        <xs:sequence>
+          <xs:element name="code" type="xs:string" />
+          <xs:element minOccurs="0" name="type" type="xs:string" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element minOccurs="0" name="count" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TrimColor">
+        <xs:sequence>
+          <xs:element name="color_code" type="xs:string" />
+          <xs:element minOccurs="0" name="color_name" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="year_season" type="gmt1:YearSeason" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="image" type="gmt1:Document" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TrimItem">
+        <xs:complexContent mixed="false">
+          <xs:extension base="gmt1:Item">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="sub_category" type="xs:string" />
+              <xs:element minOccurs="0" name="material" type="xs:string" />
+              <xs:element minOccurs="0" name="dtm" type="xs:boolean" />
+              <xs:element minOccurs="0" name="logo" type="xs:boolean" />
+              <xs:element minOccurs="0" name="logo_desc" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="cad_file" type="gmt1:Document" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="sketch" type="gmt1:Document" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="color" type="gmt1:TrimColor" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="Woven">
+        <xs:complexContent mixed="false">
+          <xs:extension base="gmt1:FabricItem">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="density_wrap" type="xs:int" />
+              <xs:element minOccurs="0" name="density_weft" type="xs:int" />
+              <xs:element minOccurs="0" name="handfeel" type="xs:string" />
+              <xs:element minOccurs="0" name="garment_washing" type="xs:string" />
+              <xs:element minOccurs="0" name="agoa" type="xs:boolean" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="YearSeason">
+        <xs:sequence>
+          <xs:element name="year" type="xs:int" />
+          <xs:element name="season" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Assortment" type="gmt1:Assortment" />
+      <xs:element name="AssortmentMarket" type="gmt1:AssortmentMarket" />
+      <xs:element name="Assortments">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" ref="gmt1:Assortment" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="BOMContainer" substitutionGroup="gmt1:BOMItem" type="gmt1:BOMContainer" />
+      <xs:element name="BOMItem" type="gmt1:BOMItem" />
+      <xs:element name="Brand" type="gmt1:Brand" />
+      <xs:element name="Color" type="gmt1:Color" />
+      <xs:element name="Colorway" type="gmt1:Colorway" />
+      <xs:element name="ColorwayQry">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="customer_code" type="xs:string" />
+            <xs:element name="page_index" type="xs:int" />
+            <xs:element name="page_size" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Colorways">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="gmt1:Colorway" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Customer" type="gmt1:Customer" />
+      <xs:element name="DimMapFabricColorway" type="gmt1:DimMapFabricColorway" />
+      <xs:element name="DimMapFabricSize" type="gmt1:DimMapFabricSize" />
+      <xs:element name="DimMapPrtEmbColorway" type="gmt1:DimMapPrtEmbColorway" />
+      <xs:element name="DimMapTrimColorway" type="gmt1:DimMapTrimColorway" />
+      <xs:element name="DimMapTrimSize" type="gmt1:DimMapTrimSize" />
+      <xs:element name="Document" type="gmt1:Document" />
+      <xs:element name="EmbroidaryItem" substitutionGroup="gmt1:Item" type="gmt1:EmbroidaryItem" />
+      <xs:element name="EmbroideryCombo" type="gmt1:EmbroideryCombo" />
+      <xs:element name="EmptyQry">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="Fabric">
+        <xs:complexType>
+          <xs:choice maxOccurs="unbounded">
+            <xs:element ref="gmt1:Knit" />
+            <xs:element ref="gmt1:Woven" />
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="FabricCombo" type="gmt1:FabricCombo" />
+      <xs:element name="FabricItem" type="gmt1:FabricItem" />
+      <xs:element name="FabricItems">
+        <xs:complexType>
+          <xs:choice maxOccurs="unbounded">
+            <xs:element ref="gmt1:Knit" />
+            <xs:element ref="gmt1:Woven" />
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GarmentBOM" type="gmt1:GarmentBOM" />
+      <xs:element name="GarmentStyle" type="gmt1:GarmentStyle" />
+      <xs:element name="GarmentStyles">
+        <xs:complexType>
+          <xs:sequence maxOccurs="unbounded">
+            <xs:element ref="gmt1:GarmentStyle" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Item" type="gmt1:Item" />
+      <xs:element name="ItemBOM" substitutionGroup="gmt1:BOMItem" type="gmt1:ItemBOM" />
+      <xs:element name="ItemDimSize" type="gmt1:ItemDimSize" />
+      <xs:element name="Knit" substitutionGroup="gmt1:Item" type="gmt1:Knit" />
+      <xs:element name="MapResult">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="label" type="xs:string" />
+            <xs:element name="value" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="MapResultList">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="gmt1:MapResult" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PLU" type="gmt1:PLU" />
+      <xs:element name="PLUAssortmentDtl" type="gmt1:PLUAssortmentDtl" />
+      <xs:element name="PrintingItem" substitutionGroup="gmt1:Item" type="gmt1:PrintingItem" />
+      <xs:element name="Product" type="gmt1:Product" />
+      <xs:element name="ProductCustomer" type="gmt1:ProductCustomer" />
+      <xs:element name="ProductSupplier" type="gmt1:ProductSupplier" />
+      <xs:element name="SKU" type="gmt1:SKU" />
+      <xs:element name="SKUAssortmentDtl" type="gmt1:SKUAssortmentDtl" />
+      <xs:element name="SizeRange" type="gmt1:SizeRange" />
+      <xs:element name="Supplier" type="gmt1:Supplier" />
+      <xs:element name="ThreadColor" type="gmt1:ThreadColor" />
+      <xs:element name="TrimColor" type="gmt1:TrimColor" />
+      <xs:element name="TrimItem" substitutionGroup="gmt1:Item" type="gmt1:TrimItem" />
+      <xs:element name="TrimItems">
+        <xs:complexType>
+          <xs:sequence maxOccurs="unbounded">
+            <xs:element ref="gmt1:TrimItem" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateResult">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="error_details" type="xs:string" />
+            <xs:element minOccurs="0" name="result" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="VersionRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="style_no" type="xs:string" />
+            <xs:element name="version" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Woven" substitutionGroup="gmt1:Item" type="gmt1:Woven" />
+      <xs:element name="YearSeason" type="gmt1:YearSeason" />
+    </xs:schema>
+    <xs:schema xmlns="http://www.tibco.com/schemas/Retail/Resources/Schemas/Schema.xsd" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.tibco.com/schemas/Retail/Resources/Schemas/Schema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Errors">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" ref="ns1:error" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="error">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ns1:error_code" />
+            <xs:element ref="ns1:error_detail" />
+            <xs:element minOccurs="0" ref="ns1:error_tracy" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="error_code" type="xs:string" />
+      <xs:element name="error_detail" type="xs:string" />
+      <xs:element name="error_tracy">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:any minOccurs="0" namespace="##any" processContents="lax" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <s:schema xmlns:tns="http://tempuri.org/EscmGo" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://tempuri.org/EscmGo" xmlns:s="http://www.w3.org/2001/XMLSchema">
+      <s:complexType name="ArrayOfAssortment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Assortment" nillable="true" type="tns:Assortment" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfBuyerPurchaseOrder">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="BuyerPurchaseOrder" nillable="true" type="tns:BuyerPurchaseOrder" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfErrorMessage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ErrorMessage" nillable="true" type="tns:ErrorMessage" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfResponseResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ResponseResult" nillable="true" type="tns:ResponseResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Assortment">
+        <s:sequence>
+          <s:element minOccurs="0" name="AssortmentID" type="s:string" />
+          <s:element minOccurs="0" name="StyleNo" type="s:string" />
+          <s:element minOccurs="0" name="StyleVersionNo" type="s:string" />
+          <s:element minOccurs="0" name="CustomerCD" type="s:string" />
+          <s:element minOccurs="0" name="BrandCD" type="s:string" />
+          <s:element minOccurs="0" name="SeasonCD" type="s:string" />
+          <s:element minOccurs="0" name="WashTypeCD" type="s:string" />
+          <s:element minOccurs="0" name="Year" type="s:string" />
+          <s:element minOccurs="0" name="FactoryCD" type="s:string" />
+          <s:element minOccurs="0" name="FDS" type="s:string" />
+          <s:element name="Embroidery" type="tns:BooleanEnum" />
+          <s:element minOccurs="0" name="BodyPatterNo" type="s:string" />
+          <s:element name="Route" type="tns:BooleanEnum" />
+          <s:element name="Printing" type="tns:BooleanEnum" />
+          <s:element name="OverShipAllowance" type="s:decimal" />
+          <s:element name="ShortShipAllowance" type="s:decimal" />
+          <s:element minOccurs="0" name="TradeTerm" type="s:string" />
+          <s:element minOccurs="0" name="ShipMode" type="s:string" />
+          <s:element minOccurs="0" name="Market" type="s:string" />
+          <s:element minOccurs="0" name="StoreDestination" type="s:string" />
+          <s:element minOccurs="0" name="SubCategory" type="s:string" />
+          <s:element minOccurs="0" name="GONo" type="s:string" />
+          <s:element minOccurs="0" name="BuyerPurchaseOrders" type="tns:ArrayOfBuyerPurchaseOrder" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="BooleanEnum">
+        <s:restriction base="s:string">
+          <s:enumeration value="Y" />
+          <s:enumeration value="N" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="BuyerPurchaseOrder">
+        <s:sequence>
+          <s:element minOccurs="0" name="BuyerPONo" type="s:string" />
+          <s:element name="DeliveryDate" type="s:dateTime" />
+          <s:element minOccurs="0" name="CountryCD" type="s:string" />
+          <s:element name="Quantity" type="s:decimal" />
+          <s:element minOccurs="0" name="ColorCode" type="s:string" />
+          <s:element minOccurs="0" name="SizeCode" type="s:string" />
+          <s:element minOccurs="0" name="PLU" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ErrorMessage">
+        <s:sequence>
+          <s:element minOccurs="0" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GOInfo">
+        <s:sequence>
+          <s:element minOccurs="0" name="GONo" type="s:string" />
+          <s:element minOccurs="0" name="Status" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ProcessStatusEnum">
+        <s:restriction base="s:string">
+          <s:enumeration value="Failed" />
+          <s:enumeration value="Succeeded" />
+          <s:enumeration value="Pending" />
+          <s:enumeration value="Accepted" />
+          <s:enumeration value="Rejected" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ResponseResult">
+        <s:sequence>
+          <s:element minOccurs="0" name="AssortmentID" type="s:string" />
+          <s:element minOccurs="0" name="GONo" type="s:string" />
+          <s:element name="ProcessStatus" type="tns:ProcessStatusEnum" />
+          <s:element minOccurs="0" name="Exception" type="tns:ArrayOfErrorMessage" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateGO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="assortments" type="tns:ArrayOfAssortment" />
+            <s:element minOccurs="0" name="userID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateGOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="CreateGOResult" type="tns:ArrayOfResponseResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryGO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="goNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryGOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="QueryGOResult" type="tns:GOInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateGO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="assortments" type="tns:ArrayOfAssortment" />
+            <s:element minOccurs="0" name="userID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateGOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="UpdateGOResult" type="tns:ArrayOfResponseResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://esquel.com/ArasService/ProductManageService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/ArasInnovatorService.Common" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel.PublicModel" />
+      <xs:element name="CreateAndFilter">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="filters" nillable="true" type="ns5:ArrayOfSelectionFilter" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateAndFilterResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="CreateAndFilterResult" nillable="true" type="ns5:SelectionFilter" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateLeaf">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="attributeName" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="searchOperator" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="filterValue" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateLeafResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="CreateLeafResult" nillable="true" type="ns5:SelectionFilter" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateNewVersion">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pi_styleNo" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="pi_styleRevNo" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateNewVersionResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="CreateNewVersionResult" nillable="true" type="ns8:ProductClass" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateOrFilter">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="filters" nillable="true" type="ns5:ArrayOfSelectionFilter" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateOrFilterResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="CreateOrFilterResult" nillable="true" type="ns5:SelectionFilter" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateProduct">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pi_productList" nillable="true" type="ns8:Products" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateProductResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="CreateProductResult" nillable="true" type="ns8:ProductClass" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetProductByID">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pi_productID" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetProductByIDResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GetProductByIDResult" nillable="true" type="ns8:ProductClass" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetProductImage">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pi_productID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="pi_getImageType" type="ns8:eumImageType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetProductImageResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GetProductImageResult" nillable="true" type="ns8:ProductClass" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetProductList">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pi_selectionFilter" nillable="true" type="ns5:SelectionFilter" />
+            <xs:element minOccurs="0" name="pi_pageIndex" type="xs:int" />
+            <xs:element minOccurs="0" name="pi_pageSize" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetProductListResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GetProductListResult" nillable="true" type="ns8:ProductClass" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReleaseProduct">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pi_styleNo" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="pi_styleRevNo" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReleaseProductResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ReleaseProductResult" nillable="true" type="ns8:ProductClass" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RemoveProductByID">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pi_productID" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RemoveProductByIDResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="RemoveProductByIDResult" nillable="true" type="ns8:ProductClass" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateProduct">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pi_productList" nillable="true" type="ns8:Products" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateProductBOM">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pi_product" nillable="true" type="ns8:Product" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateProductBOMResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="UpdateProductBOMResult" nillable="true" type="ns5:ResponseResultNormally" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateProductResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="UpdateProductResult" nillable="true" type="ns8:ProductClass" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:q1="http://www.esquel.com/Product/namespace/" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.esquel.com/Product/namespace/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfSelectionFilterBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="SelectionFilter" nillable="true" type="q1:SelectionFilterBaseType" />
+          <xs:element name="pageIndex" type="xs:int" />
+          <xs:element name="pageSize" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="BOMCategoryEnum">
+        <xs:annotation>
+          <xs:documentation>Enumerations of BOM categories</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+      <xs:simpleType name="BodyPatternEnum">
+        <xs:annotation>
+          <xs:documentation>Enumerations of body patterns</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+      <xs:simpleType name="CollarEnum">
+        <xs:annotation>
+          <xs:documentation>Enumerations of collars</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+      <xs:simpleType name="CollectionEnum">
+        <xs:annotation>
+          <xs:documentation>Enumerations of collections</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+      <xs:complexType name="ColorBaseType">
+        <xs:annotation>
+          <xs:documentation>Base type of color</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string" />
+          <xs:element name="DocumentURIs">
+            <xs:complexType>
+              <xs:sequence maxOccurs="unbounded">
+                <xs:element name="DocumentURI" type="q1:DocumentURIBaseType" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element maxOccurs="unbounded" name="YearSeason" type="q1:YearSeasonBaseType" />
+        </xs:sequence>
+        <xs:attribute name="Code" type="xs:string" />
+      </xs:complexType>
+      <xs:complexType name="ColorwayBaseType">
+        <xs:annotation>
+          <xs:documentation>Base type of describing a colorway</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="PLU" type="xs:string" />
+          <xs:element name="DocumentURIs">
+            <xs:complexType>
+              <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="DocumentURI" type="q1:DocumentURIBaseType" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="ColorwayName" type="xs:string" />
+          <xs:element name="CustomerReferenceName" type="xs:string" />
+          <xs:element name="CustomerReferenceCode" type="xs:string" />
+          <xs:element maxOccurs="unbounded" name="YearSeason" type="q1:YearSeasonBaseType" />
+          <xs:element maxOccurs="unbounded" name="BodyPattern" type="xs:string" />
+        </xs:sequence>
+        <xs:attribute name="Code" type="xs:string" />
+      </xs:complexType>
+      <xs:simpleType name="CuffEnum">
+        <xs:annotation>
+          <xs:documentation>Enumerations of cuffs</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+      <xs:simpleType name="CurrencyBaseType">
+        <xs:annotation>
+          <xs:documentation>Base type of currency</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+      <xs:complexType name="CustomerBaseType">
+        <xs:annotation>
+          <xs:documentation>Base type to describe a customer of Esquel</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="CustomerCode" type="xs:string" />
+          <xs:element name="CustomerName" type="xs:string" />
+          <xs:element name="CustomerReferenceNum" type="xs:string" />
+          <xs:element name="BrandName" type="xs:string" />
+          <xs:element name="BrandCode" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="CutWayEnum">
+        <xs:annotation>
+          <xs:documentation>Enumerations of cut ways</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+      <xs:simpleType name="DataActionEnum">
+        <xs:annotation>
+          <xs:documentation>Enumerations of Data Action Event</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+      <xs:simpleType name="DocumentURIBaseType">
+        <xs:annotation>
+          <xs:documentation>Base type of document URI</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:anyURI" />
+      </xs:simpleType>
+      <xs:complexType name="FabricBOMItemBaseType">
+        <xs:annotation>
+          <xs:documentation>Fabric BOM Item</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="FabricCode" type="xs:string" />
+          <xs:element name="GarmentComponent" type="xs:string" />
+          <xs:element name="CutWay" type="xs:string" />
+          <xs:element name="FabricWidth" type="xs:string" />
+          <xs:element name="ComboName" type="xs:string" />
+          <xs:element name="YPD" type="xs:float" />
+          <xs:element name="PIeceFabricUsage" type="xs:int" />
+          <xs:element name="PieceFabricSize" type="xs:string" />
+          <xs:element name="FabricParts">
+            <xs:complexType>
+              <xs:sequence maxOccurs="unbounded">
+                <xs:element name="FabricPart" type="q1:FabricPartBaseType" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="FabricCategoryEnum">
+        <xs:annotation>
+          <xs:documentation>Enumerations of fabric categories</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+      <xs:complexType name="FabricComboBaseType">
+        <xs:annotation>
+          <xs:documentation>Base type of fabric combo name</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="ComboName" type="xs:string" />
+        </xs:sequence>
+        <xs:attribute name="Code" type="xs:string" />
+      </xs:complexType>
+      <xs:complexType name="FabricContentBaseType">
+        <xs:annotation>
+          <xs:documentation>Base type of fabric content</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Description" type="xs:string" />
+          <xs:element name="Ratio" type="xs:float" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="FabricDyeMethodEnum">
+        <xs:annotation>
+          <xs:documentation>Enumerations of fabric dyeing methods</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+      <xs:complexType name="FabricPartBaseType">
+        <xs:annotation>
+          <xs:documentation>Base type of fabric part in garment BOM</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="PPONum" type="xs:string" />
+          <xs:element name="FabricHeader" type="q1:FabricPartHeaderType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Supplier" type="q1:SupplierBaseType" />
+          <xs:element name="Description" type="xs:string" />
+          <xs:element name="ID" type="xs:string" />
+          <xs:element maxOccurs="unbounded" name="YarnCount" type="xs:string" />
+          <xs:element maxOccurs="unbounded" name="Content" type="q1:FabricContentBaseType" />
+          <xs:element name="Construction" type="xs:string" />
+          <xs:element name="DyeMethod" type="q1:FabricDyeMethodEnum" />
+          <xs:element name="Finishing" type="xs:string" />
+          <xs:element maxOccurs="unbounded" name="Width" type="xs:string" />
+          <xs:element name="Pattern" type="q1:BodyPatternEnum" />
+          <xs:element name="Printing" type="xs:string" />
+          <xs:element name="RepeatVertical" type="xs:string" />
+          <xs:element name="RepeatHorizontal" type="xs:string" />
+          <xs:element name="ColorCombo" type="q1:FabricComboBaseType" />
+          <xs:element name="FabricShrinkage" type="q1:FabricShrinkageBaseType" />
+          <xs:element name="GarmentShrinkage" type="q1:GarmentShrinkageBaseType" />
+          <xs:element name="TestingGrade" type="q1:FabricTestingGradeEnum" />
+          <xs:element maxOccurs="unbounded" name="Price" type="q1:PriceBaseType" />
+          <xs:element maxOccurs="unbounded" name="YearSeason" type="q1:YearSeasonBaseType" />
+          <xs:element name="Remarks" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Size" type="q1:FabricSizeBaseType" />
+          <xs:element minOccurs="0" name="Layout" type="q1:URIDocumentsType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FabricPartHeaderType">
+        <xs:annotation>
+          <xs:documentation>Base type of fabric part header information</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Version" type="xs:string" />
+          <xs:element name="Status" type="xs:string" />
+          <xs:element name="Cateogry" type="q1:FabricCategoryEnum" />
+          <xs:element minOccurs="0" name="WovenFabrication" type="q1:WovenFabricationEnum" />
+          <xs:element minOccurs="0" name="KnitFabrication" type="q1:KnitFabricationEnum" />
+          <xs:element maxOccurs="unbounded" name="CustomerInfo" type="q1:CustomerBaseType" />
+        </xs:sequence>
+        <xs:attribute name="Code" type="xs:string" />
+      </xs:complexType>
+      <xs:complexType name="FabricShrinkageBaseType">
+        <xs:annotation>
+          <xs:documentation>Base type of fabric shrinkage </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Length" type="xs:float" />
+          <xs:element name="Width" type="xs:float" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FabricSizeBaseType">
+        <xs:annotation>
+          <xs:documentation>Base type of fabric size measurement</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Measurement" type="xs:decimal" />
+          <xs:element name="Dimension" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="FabricTestingGradeEnum">
+        <xs:annotation>
+          <xs:documentation>Enumerations of fabric testing grades</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+      <xs:simpleType name="FitEnum">
+        <xs:annotation>
+          <xs:documentation>Enumerations of fits in sub-category</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+      <xs:complexType name="GarmentBOMItemBaseType">
+        <xs:annotation>
+          <xs:documentation>Base type of Garment BOM</xs:documentation>
+        </xs:annotation>
+        <xs:sequence maxOccurs="unbounded">
+          <xs:element name="Colorway" type="q1:ColorwayBaseType" />
+          <xs:element name="ProductSizes">
+            <xs:complexType>
+              <xs:sequence maxOccurs="unbounded">
+                <xs:element name="ProductSize" type="q1:ProductSizeBaseType" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="FabricBOM" type="q1:FabricBOMItemBaseType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="TrimBOM" type="q1:TrimBOMItemBaseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GarmentShrinkageBaseType">
+        <xs:annotation>
+          <xs:documentation>Base type of garment shrinkage</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Length" type="xs:float" />
+          <xs:element name="Width" type="xs:float" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="GenderEnum">
+        <xs:annotation>
+          <xs:documentation>Enumerations of gender</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+      <xs:simpleType name="KnitFabricationEnum">
+        <xs:annotation>
+          <xs:documentation>Enumerations of knit fabrications</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+      <xs:simpleType name="LineEnum">
+        <xs:annotation>
+          <xs:documentation>Enumerations of lines in sub-category</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+      <xs:simpleType name="MakingEnum">
+        <xs:annotation>
+          <xs:documentation>Enumerations of making</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+      <xs:simpleType name="PlacketEnum">
+        <xs:annotation>
+          <xs:documentation>Enumerations of plackets</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+      <xs:simpleType name="PocketEnum">
+        <xs:annotation>
+          <xs:documentation>Enumerations of pocket types</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+      <xs:complexType name="PriceBaseType">
+        <xs:annotation>
+          <xs:documentation>Base type of price</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Amount" type="xs:decimal" />
+          <xs:element name="Currency" type="q1:CurrencyBaseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ProductBaseType">
+        <xs:annotation>
+          <xs:documentation>Base type to describe a product</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Style">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Description" type="xs:string" />
+              </xs:sequence>
+              <xs:attribute name="ID" type="xs:string" />
+              <xs:attribute name="Version" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Year" type="xs:integer" />
+          <xs:element name="Season" type="xs:string" />
+          <xs:element maxOccurs="unbounded" name="CustomerInfo" type="q1:CustomerBaseType" />
+          <xs:element name="ProductType" type="q1:ProductTypeEnum" />
+          <xs:element name="ProductCategory" type="q1:ProductCategoryEnum" />
+          <xs:element name="ProductSubCategory" type="q1:ProductSubCateogryEnum" />
+          <xs:element minOccurs="0" name="FinalDevelopmentSample">
+            <xs:complexType>
+              <xs:attribute name="Number" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="ProductFeatures" type="q1:ProductFeaturesType" />
+          <xs:element name="MaterialStatus" type="xs:string" />
+          <xs:element minOccurs="0" name="Image" type="q1:URIDocumentsType" />
+          <xs:element minOccurs="0" name="PaperPattern" type="q1:URIDocumentsType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="ProductCategoryEnum">
+        <xs:annotation>
+          <xs:documentation>Second tier of product hierachy to group products in tops, bottoms, etc</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+      <xs:complexType name="ProductFeaturesType">
+        <xs:annotation>
+          <xs:documentation>Product features to further describe the finer details of a specific product which is part of the product base type</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Gender" type="q1:GenderEnum" />
+          <xs:element name="Collection" type="xs:string" />
+          <xs:element name="Series" type="q1:SeriesEnum" />
+          <xs:element name="Making" type="q1:MakingEnum" />
+          <xs:element name="Fit" type="q1:FitEnum" />
+          <xs:element name="Line" type="q1:LineEnum" />
+          <xs:element name="Collar" type="q1:CollarEnum" />
+          <xs:element name="Placket" type="q1:PlacketEnum" />
+          <xs:element name="Sleeve" type="q1:SleeveEnum" />
+          <xs:element name="Cuff" type="q1:CuffEnum" />
+          <xs:element name="Pocket" type="q1:PocketEnum" />
+          <xs:element name="Washing" type="xs:string" />
+          <xs:element name="Embroidery" type="xs:string" />
+          <xs:element name="Printing" type="xs:string" />
+          <xs:element name="BodyPattern" type="q1:BodyPatternEnum" />
+          <xs:element name="SAH" type="xs:float" />
+          <xs:element name="Remarks" type="xs:string" />
+          <xs:element maxOccurs="unbounded" name="YearSeason" type="q1:YearSeasonBaseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="ProductSizeBaseType">
+        <xs:annotation>
+          <xs:documentation>Base type of product sizes</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+      <xs:simpleType name="ProductSubCateogryEnum">
+        <xs:annotation>
+          <xs:documentation>Sub-category of product category to specify if the product is  (e.g. MDS)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+      <xs:simpleType name="ProductTypeEnum">
+        <xs:annotation>
+          <xs:documentation>Top level of product hierarchy to specify what specific type of product is</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+      <xs:complexType name="SeasonEnum">
+        <xs:annotation>
+          <xs:documentation>Enumerations of seasons</xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="Code">
+          <xs:simpleType>
+            <xs:restriction base="xs:string" />
+          </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="SeasonName">
+          <xs:simpleType>
+            <xs:restriction base="xs:string" />
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:complexType>
+      <xs:complexType name="SelectionFilterBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AttributeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FilterType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FilterValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Filters" nillable="true" type="q1:ArrayOfSelectionFilterBaseType" />
+          <xs:element minOccurs="0" name="SearchOperator" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="SeriesEnum">
+        <xs:annotation>
+          <xs:documentation>Enumerations of series in sub-category</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+      <xs:complexType name="SizeBaseType">
+        <xs:annotation>
+          <xs:documentation>Base type of size</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Measurement" type="xs:decimal" />
+          <xs:element name="Dimension" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="SleeveEnum">
+        <xs:annotation>
+          <xs:documentation>Enumerations of sleeves</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+      <xs:simpleType name="StylingEnum">
+        <xs:annotation>
+          <xs:documentation>Enumerations of stylings in sub-category</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+      <xs:complexType name="SupplierBaseType">
+        <xs:annotation>
+          <xs:documentation>Base type of suppliers</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="SupplierName" type="xs:string" />
+          <xs:element name="ItemCode" type="xs:string" />
+        </xs:sequence>
+        <xs:attribute name="Code" type="xs:string" />
+      </xs:complexType>
+      <xs:complexType name="TrimBOMItemBaseType">
+        <xs:annotation>
+          <xs:documentation>Trim BOM Item</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="TrimCode" type="xs:string" />
+          <xs:element name="TrimSize" type="xs:string" />
+          <xs:element name="TrimUsage" type="xs:int" />
+          <xs:element name="TrimParts">
+            <xs:complexType>
+              <xs:sequence maxOccurs="unbounded">
+                <xs:element name="TrimPart" type="q1:TrimPartBaseType" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="TrimColor" type="q1:ColorBaseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TrimBtnLogoBaseType">
+        <xs:annotation>
+          <xs:documentation>Base type of trim button logo</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Image" type="q1:DocumentURIBaseType" />
+          <xs:element name="Description" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TrimCategoryBaseType">
+        <xs:annotation>
+          <xs:documentation>Base type of trim categories</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Description">
+            <xs:simpleType>
+              <xs:restriction base="xs:string" />
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+        <xs:attribute name="Code">
+          <xs:simpleType>
+            <xs:restriction base="xs:string" />
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:complexType>
+      <xs:complexType name="TrimPartBaseType">
+        <xs:annotation>
+          <xs:documentation>Base type of trim part in garment BOM</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="TrimHeader" type="q1:TrimPartHeaderType" />
+          <xs:element name="Description" type="xs:string" />
+          <xs:element maxOccurs="unbounded" name="Color" type="q1:ColorBaseType" />
+          <xs:element maxOccurs="unbounded" name="Size" type="q1:SizeBaseType" />
+          <xs:element name="Material" type="xs:string" />
+          <xs:element name="DTM" type="xs:string" />
+          <xs:element name="ID" type="xs:string" />
+          <xs:element name="Logo" type="q1:TrimBtnLogoBaseType" />
+          <xs:element maxOccurs="unbounded" name="Price" type="q1:PriceBaseType" />
+          <xs:element maxOccurs="unbounded" name="YearSeason" type="q1:YearSeasonBaseType" />
+          <xs:element maxOccurs="unbounded" name="Supplier" type="q1:SupplierBaseType" />
+          <xs:element name="Remarks" type="xs:string" />
+          <xs:element minOccurs="0" name="Sketch" type="q1:URIDocumentsType" />
+          <xs:element minOccurs="0" name="CAD" type="q1:URIDocumentsType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="AGPONum" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TrimPartHeaderType">
+        <xs:annotation>
+          <xs:documentation>Base type of trim part header information</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Version" type="xs:string" />
+          <xs:element name="Status" type="xs:string" />
+          <xs:element name="Cateogry" type="q1:TrimCategoryBaseType" />
+          <xs:element name="SubCategory" type="xs:string" />
+          <xs:element maxOccurs="unbounded" name="CustomerInfo" type="q1:CustomerBaseType" />
+        </xs:sequence>
+        <xs:attribute name="Code" type="xs:string" />
+      </xs:complexType>
+      <xs:complexType name="URIDocumentsType">
+        <xs:annotation>
+          <xs:documentation>Base type of an attachment list</xs:documentation>
+        </xs:annotation>
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="DocumentURI" type="q1:DocumentURIBaseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="WovenFabricationEnum">
+        <xs:annotation>
+          <xs:documentation>Enumerations of woven fabrications</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" />
+      </xs:simpleType>
+      <xs:complexType name="YearSeasonBaseType">
+        <xs:annotation>
+          <xs:documentation>Base type of year/season assigned to a material</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Year" type="xs:integer" />
+          <xs:element name="Season" type="q1:SeasonEnum" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfSelectionFilter" nillable="true" type="q1:ArrayOfSelectionFilterBaseType" />
+      <xs:element name="BuyerPO">
+        <xs:annotation>
+          <xs:documentation>Buyer PO</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" ref="q1:GenericID">
+              <xs:annotation>
+                <xs:documentation>Generic ID Elements</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" ref="q1:Product">
+              <xs:annotation>
+                <xs:documentation>Root element of product </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="BuyerPOs">
+        <xs:annotation>
+          <xs:documentation>List of Buyer PO</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence maxOccurs="unbounded">
+            <xs:element ref="q1:BuyerPO">
+              <xs:annotation>
+                <xs:documentation>Buyer PO</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="FabricPart" type="q1:FabricPartBaseType">
+        <xs:annotation>
+          <xs:documentation>Fabric Part Element</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FabricPartList">
+        <xs:annotation>
+          <xs:documentation>Fabric Part List</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence maxOccurs="unbounded">
+            <xs:element ref="q1:FabricPart">
+              <xs:annotation>
+                <xs:documentation>Fabric Part Element</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GarmentOrder">
+        <xs:annotation>
+          <xs:documentation>Garment Order</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" ref="q1:GenericID">
+              <xs:annotation>
+                <xs:documentation>Generic ID Elements</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" ref="q1:Product">
+              <xs:annotation>
+                <xs:documentation>Root element of product </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" ref="q1:BuyerPOs">
+              <xs:annotation>
+                <xs:documentation>List of Buyer PO</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GarmentOrders">
+        <xs:annotation>
+          <xs:documentation>List of garment order</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence maxOccurs="unbounded">
+            <xs:element ref="q1:GarmentOrder">
+              <xs:annotation>
+                <xs:documentation>Garment Order</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GenericID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Generic ID Elements</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Product">
+        <xs:annotation>
+          <xs:documentation>Root element of product </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ProductInfo" type="q1:ProductBaseType" />
+            <xs:element name="BOM" type="q1:GarmentBOMItemBaseType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Products">
+        <xs:annotation>
+          <xs:documentation>Root element of products</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence maxOccurs="unbounded">
+            <xs:element ref="q1:Product">
+              <xs:annotation>
+                <xs:documentation>Root element of product </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SelectionFilter" nillable="true" type="q1:SelectionFilterBaseType" />
+      <xs:element name="TrimPart" type="q1:TrimPartBaseType">
+        <xs:annotation>
+          <xs:documentation>Trim Part Element</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TrimPartList">
+        <xs:annotation>
+          <xs:documentation>Trim Part List</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence maxOccurs="unbounded">
+            <xs:element ref="q1:TrimPart">
+              <xs:annotation>
+                <xs:documentation>Trim Part Element</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfstring">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel.PublicModel" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel.PublicModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/ArasInnovatorService.Common" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="ArrayOfColorCodeBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ColorCodeBaseType" nillable="true" type="tns:ColorCodeBaseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfColorwayBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ColorwayBaseType" nillable="true" type="tns:ColorwayBaseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfCustomerBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomerBaseType" nillable="true" type="tns:CustomerBaseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfFabricBOMItemBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="FabricBOMItemBaseType" nillable="true" type="tns:FabricBOMItemBaseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfFabricComboBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="FabricComboBaseType" nillable="true" type="tns:FabricComboBaseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfFabricContentBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="FabricContentBaseType" nillable="true" type="tns:FabricContentBaseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfFabricPartBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="FabricPartBaseType" nillable="true" type="tns:FabricPartBaseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfFabricSizeBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="FabricSizeBaseType" nillable="true" type="tns:FabricSizeBaseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfGarmentBOMItemBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="GarmentBOMItemBaseType" nillable="true" type="tns:GarmentBOMItemBaseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfGarmentBOMItemBaseTypeSizesRange">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="GarmentBOMItemBaseTypeSizesRange" nillable="true" type="tns:GarmentBOMItemBaseTypeSizesRange" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfGarmentBOMItemBaseTypeSizesRangeSize">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="GarmentBOMItemBaseTypeSizesRangeSize" nillable="true" type="tns:GarmentBOMItemBaseTypeSizesRangeSize" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfPriceBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="PriceBaseType" nillable="true" type="tns:PriceBaseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfProduct">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfSizeBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="SizeBaseType" nillable="true" type="tns:SizeBaseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfSizeDimesionBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="SizeDimesionBaseType" nillable="true" type="tns:SizeDimesionBaseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfSupplierBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="SupplierBaseType" nillable="true" type="tns:SupplierBaseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfTrimBOMItemBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="TrimBOMItemBaseType" nillable="true" type="tns:TrimBOMItemBaseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfTrimPartBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="TrimPartBaseType" nillable="true" type="tns:TrimPartBaseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfYearSeasonBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="YearSeasonBaseType" nillable="true" type="tns:YearSeasonBaseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ColorCodeBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ColorCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ColorName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ColorwayBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BodyPattern" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ColorwayName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerReferenceCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerReferenceName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DocumentURIs" nillable="true" type="tns:ColorwayBaseTypeDocumentURIs" />
+          <xs:element minOccurs="0" name="Line" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PLU" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RelatedID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="YearSeason" nillable="true" type="tns:ArrayOfYearSeasonBaseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ColorwayBaseTypeDocumentURIs">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DocumentURI" nillable="true" type="ns7:ArrayOfstring" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CustomerBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BrandCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BrandName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerReferenceNum" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FabricBOMItemBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ComboName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CutWay" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FabricCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FabricCodeRelatedID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FabricPart" nillable="true" type="tns:FabricPartBaseType" />
+          <xs:element minOccurs="0" name="FabricSize" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FabricSizeUOM" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FabricWidth" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GarmentComponent" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GarmentPart" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GarmentPartValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GarmentSize" nillable="true" type="tns:ArrayOfSizeDimesionBaseType" />
+          <xs:element minOccurs="0" name="PIeceFabricUsage" type="xs:int" />
+          <xs:element minOccurs="0" name="PieceFabricSize" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PieceFabricUsageUOM" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="YPD" type="xs:float" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FabricComboBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ColorCode" nillable="true" type="tns:ArrayOfColorCodeBaseType" />
+          <xs:element minOccurs="0" name="ComboCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ComboName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ImageURL" nillable="true" type="tns:URIDocumentsType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FabricContentBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ratio" type="xs:float" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FabricDensityBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Weft" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Wrap" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FabricPartBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AGOA" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ColorCombo" nillable="true" type="tns:ArrayOfFabricComboBaseType" />
+          <xs:element minOccurs="0" name="Construction" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Content" nillable="true" type="tns:ArrayOfFabricContentBaseType" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DyeMethod" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FabricDensity" nillable="true" type="tns:FabricDensityBaseType" />
+          <xs:element minOccurs="0" name="FabricHeader" nillable="true" type="tns:FabricPartHeaderType" />
+          <xs:element minOccurs="0" name="FabricShrinkage" nillable="true" type="tns:FabricShrinkageBaseType" />
+          <xs:element minOccurs="0" name="Finishing" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FirstImageUrl" nillable="true" type="tns:URIDocumentsType" />
+          <xs:element minOccurs="0" name="GarmentShrinkage" nillable="true" type="tns:GarmentShrinkageBaseType" />
+          <xs:element minOccurs="0" name="GarmentWashing" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HandFeel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Layout" nillable="true" type="tns:URIDocumentsType" />
+          <xs:element minOccurs="0" name="PPONo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Pattern" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Price" nillable="true" type="tns:ArrayOfPriceBaseType" />
+          <xs:element minOccurs="0" name="Printing" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RepeatHorizontal" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RepeatVertical" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Size" nillable="true" type="tns:ArrayOfFabricSizeBaseType" />
+          <xs:element minOccurs="0" name="Supplier" nillable="true" type="tns:ArrayOfSupplierBaseType" />
+          <xs:element minOccurs="0" name="TestingGrade" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Width" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="YarnCount" nillable="true" type="tns:FabricYarnTypeBaseType" />
+          <xs:element minOccurs="0" name="YarnType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="YearSeason" nillable="true" type="tns:ArrayOfYearSeasonBaseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FabricPartHeaderType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Cateogry" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerInfo" nillable="true" type="tns:ArrayOfCustomerBaseType" />
+          <xs:element minOccurs="0" name="FabricNatureType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fabrication" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SupplierItemCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FabricShrinkageBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Length" type="xs:float" />
+          <xs:element minOccurs="0" name="Width" type="xs:float" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FabricSizeBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SizeCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SizeDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SizeUOM" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FabricYarnTypeBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Weft" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Wrap" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GarmentBOMItemBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BOMType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BOMTypeValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ColorwayCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ColorwayName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ColorwayRelatedID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FabricBOM" nillable="true" type="tns:ArrayOfFabricBOMItemBaseType" />
+          <xs:element minOccurs="0" name="TrimBOM" nillable="true" type="tns:ArrayOfTrimBOMItemBaseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GarmentBOMItemBaseTypeSizesRange">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LongDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SizeCategory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SizeDimesionList" nillable="true" type="tns:ArrayOfGarmentBOMItemBaseTypeSizesRangeSize" />
+          <xs:element minOccurs="0" name="SizeRangeName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GarmentBOMItemBaseTypeSizesRangeSize">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SizeDimesion" nillable="true" type="tns:ArrayOfSizeDimesionBaseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GarmentShrinkageBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Length" type="xs:float" />
+          <xs:element minOccurs="0" name="Width" type="xs:float" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PriceBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Product">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BOM" nillable="true" type="tns:ArrayOfGarmentBOMItemBaseType" />
+          <xs:element minOccurs="0" name="FabricPart" nillable="true" type="tns:ArrayOfFabricPartBaseType" />
+          <xs:element minOccurs="0" name="ProductInfo" nillable="true" type="tns:ProductBaseType" />
+          <xs:element minOccurs="0" name="TrimPart" nillable="true" type="tns:ArrayOfTrimPartBaseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ProductBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Colorway" nillable="true" type="tns:ArrayOfColorwayBaseType" />
+          <xs:element minOccurs="0" name="CustomerInfo" nillable="true" type="tns:ArrayOfCustomerBaseType" />
+          <xs:element minOccurs="0" name="FinalDevelopmentSample" nillable="true" type="tns:ProductBaseTypeFinalDevelopmentSample" />
+          <xs:element minOccurs="0" name="Image" nillable="true" type="tns:URIDocumentsType" />
+          <xs:element minOccurs="0" name="MaterialStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaperPattern" nillable="true" type="tns:URIDocumentsType" />
+          <xs:element minOccurs="0" name="ProductCategory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductFeatures" nillable="true" type="tns:ProductFeaturesType" />
+          <xs:element minOccurs="0" name="ProductSizes" nillable="true" type="tns:ArrayOfGarmentBOMItemBaseTypeSizesRange" />
+          <xs:element minOccurs="0" name="ProductSubCategory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Style" nillable="true" type="tns:ProductBaseTypeStyle" />
+          <xs:element minOccurs="0" name="YearSeason" nillable="true" type="tns:ArrayOfYearSeasonBaseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ProductBaseTypeFinalDevelopmentSample">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ProductBaseTypeStyle">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GarmentType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ProductClass">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DisplayPageIndex" type="xs:int" />
+          <xs:element minOccurs="0" name="DisplayPageSize" type="xs:int" />
+          <xs:element minOccurs="0" name="ErrorCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ErrorDetail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ErrorString" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GetImageType" type="tns:eumImageType" />
+          <xs:element minOccurs="0" name="GetReturnString" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OperationID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductList" nillable="true" type="tns:Products" />
+          <xs:element minOccurs="0" name="SelectionFilter" nillable="true" type="ns5:SelectionFilter" />
+          <xs:element minOccurs="0" name="SuccessFlag" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ProductFeaturesType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BodyPattern" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Collar" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Collection" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cuff" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Embroidery" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fit" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Making" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Placket" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Pocket" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Printing" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SAH" type="xs:float" />
+          <xs:element minOccurs="0" name="Series" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Sleeve" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Styling" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Washing" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Products">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Product" nillable="true" type="tns:ArrayOfProduct" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SeasonEnum">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SeasonName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SizeBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SizeCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SizeDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SizeUOM" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SizeDimesionBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SizeCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SizeType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SupplierBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SupplierName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TrimBOMItemBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GarmentSize" nillable="true" type="tns:ArrayOfSizeDimesionBaseType" />
+          <xs:element minOccurs="0" name="TrimCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TrimCodeRelatedID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TrimColor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TrimPart" nillable="true" type="tns:TrimPartBaseType" />
+          <xs:element minOccurs="0" name="TrimSize" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TrimSizeUOM" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TrimUsage" type="xs:int" />
+          <xs:element minOccurs="0" name="TrimUsageUOM" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TrimBtnLogoBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Logo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TrimCategoryBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TrimPartBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AGPONo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CAD" nillable="true" type="tns:URIDocumentsType" />
+          <xs:element minOccurs="0" name="ColorCombo" nillable="true" type="tns:ArrayOfFabricComboBaseType" />
+          <xs:element minOccurs="0" name="DTM" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FirstImageUrl" nillable="true" type="tns:URIDocumentsType" />
+          <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Logo" nillable="true" type="tns:TrimBtnLogoBaseType" />
+          <xs:element minOccurs="0" name="Material" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Price" nillable="true" type="tns:ArrayOfPriceBaseType" />
+          <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Size" nillable="true" type="tns:ArrayOfSizeBaseType" />
+          <xs:element minOccurs="0" name="Sketch" nillable="true" type="tns:URIDocumentsType" />
+          <xs:element minOccurs="0" name="Supplier" nillable="true" type="tns:ArrayOfSupplierBaseType" />
+          <xs:element minOccurs="0" name="TrimHeader" nillable="true" type="tns:TrimPartHeaderType" />
+          <xs:element minOccurs="0" name="YearSeason" nillable="true" type="tns:ArrayOfYearSeasonBaseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TrimPartHeaderType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Cateogry" nillable="true" type="tns:TrimCategoryBaseType" />
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerInfo" nillable="true" type="tns:ArrayOfCustomerBaseType" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubCategory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="URIDocumentsType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DocumentURI" nillable="true" type="ns7:ArrayOfstring" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="YearSeasonBaseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Season" nillable="true" type="tns:SeasonEnum" />
+          <xs:element minOccurs="0" name="Year" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="eumImageType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="UsePrimaryPath" />
+          <xs:enumeration value="UseTempPath" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="ArrayOfColorCodeBaseType" nillable="true" type="tns:ArrayOfColorCodeBaseType" />
+      <xs:element name="ArrayOfColorwayBaseType" nillable="true" type="tns:ArrayOfColorwayBaseType" />
+      <xs:element name="ArrayOfCustomerBaseType" nillable="true" type="tns:ArrayOfCustomerBaseType" />
+      <xs:element name="ArrayOfFabricBOMItemBaseType" nillable="true" type="tns:ArrayOfFabricBOMItemBaseType" />
+      <xs:element name="ArrayOfFabricComboBaseType" nillable="true" type="tns:ArrayOfFabricComboBaseType" />
+      <xs:element name="ArrayOfFabricContentBaseType" nillable="true" type="tns:ArrayOfFabricContentBaseType" />
+      <xs:element name="ArrayOfFabricPartBaseType" nillable="true" type="tns:ArrayOfFabricPartBaseType" />
+      <xs:element name="ArrayOfFabricSizeBaseType" nillable="true" type="tns:ArrayOfFabricSizeBaseType" />
+      <xs:element name="ArrayOfGarmentBOMItemBaseType" nillable="true" type="tns:ArrayOfGarmentBOMItemBaseType" />
+      <xs:element name="ArrayOfGarmentBOMItemBaseTypeSizesRange" nillable="true" type="tns:ArrayOfGarmentBOMItemBaseTypeSizesRange" />
+      <xs:element name="ArrayOfGarmentBOMItemBaseTypeSizesRangeSize" nillable="true" type="tns:ArrayOfGarmentBOMItemBaseTypeSizesRangeSize" />
+      <xs:element name="ArrayOfPriceBaseType" nillable="true" type="tns:ArrayOfPriceBaseType" />
+      <xs:element name="ArrayOfProduct" nillable="true" type="tns:ArrayOfProduct" />
+      <xs:element name="ArrayOfSizeBaseType" nillable="true" type="tns:ArrayOfSizeBaseType" />
+      <xs:element name="ArrayOfSizeDimesionBaseType" nillable="true" type="tns:ArrayOfSizeDimesionBaseType" />
+      <xs:element name="ArrayOfSupplierBaseType" nillable="true" type="tns:ArrayOfSupplierBaseType" />
+      <xs:element name="ArrayOfTrimBOMItemBaseType" nillable="true" type="tns:ArrayOfTrimBOMItemBaseType" />
+      <xs:element name="ArrayOfTrimPartBaseType" nillable="true" type="tns:ArrayOfTrimPartBaseType" />
+      <xs:element name="ArrayOfYearSeasonBaseType" nillable="true" type="tns:ArrayOfYearSeasonBaseType" />
+      <xs:element name="ColorCodeBaseType" nillable="true" type="tns:ColorCodeBaseType" />
+      <xs:element name="ColorwayBaseType" nillable="true" type="tns:ColorwayBaseType" />
+      <xs:element name="ColorwayBaseTypeDocumentURIs" nillable="true" type="tns:ColorwayBaseTypeDocumentURIs" />
+      <xs:element name="CustomerBaseType" nillable="true" type="tns:CustomerBaseType" />
+      <xs:element name="FabricBOMItemBaseType" nillable="true" type="tns:FabricBOMItemBaseType" />
+      <xs:element name="FabricComboBaseType" nillable="true" type="tns:FabricComboBaseType" />
+      <xs:element name="FabricContentBaseType" nillable="true" type="tns:FabricContentBaseType" />
+      <xs:element name="FabricDensityBaseType" nillable="true" type="tns:FabricDensityBaseType" />
+      <xs:element name="FabricPartBaseType" nillable="true" type="tns:FabricPartBaseType" />
+      <xs:element name="FabricPartHeaderType" nillable="true" type="tns:FabricPartHeaderType" />
+      <xs:element name="FabricShrinkageBaseType" nillable="true" type="tns:FabricShrinkageBaseType" />
+      <xs:element name="FabricSizeBaseType" nillable="true" type="tns:FabricSizeBaseType" />
+      <xs:element name="FabricYarnTypeBaseType" nillable="true" type="tns:FabricYarnTypeBaseType" />
+      <xs:element name="GarmentBOMItemBaseType" nillable="true" type="tns:GarmentBOMItemBaseType" />
+      <xs:element name="GarmentBOMItemBaseTypeSizesRange" nillable="true" type="tns:GarmentBOMItemBaseTypeSizesRange" />
+      <xs:element name="GarmentBOMItemBaseTypeSizesRangeSize" nillable="true" type="tns:GarmentBOMItemBaseTypeSizesRangeSize" />
+      <xs:element name="GarmentShrinkageBaseType" nillable="true" type="tns:GarmentShrinkageBaseType" />
+      <xs:element name="PriceBaseType" nillable="true" type="tns:PriceBaseType" />
+      <xs:element name="Product" nillable="true" type="tns:Product" />
+      <xs:element name="ProductBaseType" nillable="true" type="tns:ProductBaseType" />
+      <xs:element name="ProductBaseTypeFinalDevelopmentSample" nillable="true" type="tns:ProductBaseTypeFinalDevelopmentSample" />
+      <xs:element name="ProductBaseTypeStyle" nillable="true" type="tns:ProductBaseTypeStyle" />
+      <xs:element name="ProductClass" nillable="true" type="tns:ProductClass" />
+      <xs:element name="ProductFeaturesType" nillable="true" type="tns:ProductFeaturesType" />
+      <xs:element name="Products" nillable="true" type="tns:Products" />
+      <xs:element name="SeasonEnum" nillable="true" type="tns:SeasonEnum" />
+      <xs:element name="SizeBaseType" nillable="true" type="tns:SizeBaseType" />
+      <xs:element name="SizeDimesionBaseType" nillable="true" type="tns:SizeDimesionBaseType" />
+      <xs:element name="SupplierBaseType" nillable="true" type="tns:SupplierBaseType" />
+      <xs:element name="TrimBOMItemBaseType" nillable="true" type="tns:TrimBOMItemBaseType" />
+      <xs:element name="TrimBtnLogoBaseType" nillable="true" type="tns:TrimBtnLogoBaseType" />
+      <xs:element name="TrimCategoryBaseType" nillable="true" type="tns:TrimCategoryBaseType" />
+      <xs:element name="TrimPartBaseType" nillable="true" type="tns:TrimPartBaseType" />
+      <xs:element name="TrimPartHeaderType" nillable="true" type="tns:TrimPartHeaderType" />
+      <xs:element name="URIDocumentsType" nillable="true" type="tns:URIDocumentsType" />
+      <xs:element name="YearSeasonBaseType" nillable="true" type="tns:YearSeasonBaseType" />
+      <xs:element name="eumImageType" nillable="true" type="tns:eumImageType" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ColorwayQry">
+    <wsdl:part name="parameters" element="ns0:ColorwayQry" />
+  </wsdl:message>
+  <wsdl:message name="error">
+    <wsdl:part name="parameters" element="ns1:error" />
+  </wsdl:message>
+  <wsdl:message name="GenericID3">
+    <wsdl:part name="parameters" element="ns2:GenericID" />
+  </wsdl:message>
+  <wsdl:message name="TrimItem">
+    <wsdl:part name="parameters" element="ns0:TrimItem" />
+  </wsdl:message>
+  <wsdl:message name="Errors5">
+    <wsdl:part name="parameters" element="ns1:Errors" />
+  </wsdl:message>
+  <wsdl:message name="UpdateGO">
+    <wsdl:part name="parameters" element="ns3:UpdateGO" />
+  </wsdl:message>
+  <wsdl:message name="UpdateGOResponse">
+    <wsdl:part name="parameters" element="ns3:UpdateGOResponse" />
+  </wsdl:message>
+  <wsdl:message name="Errors9">
+    <wsdl:part name="parameters" element="ns1:Errors" />
+  </wsdl:message>
+  <wsdl:message name="QueryGO">
+    <wsdl:part name="parameters" element="ns3:QueryGO" />
+  </wsdl:message>
+  <wsdl:message name="QueryGOResponse">
+    <wsdl:part name="parameters" element="ns3:QueryGOResponse" />
+  </wsdl:message>
+  <wsdl:message name="Errors7">
+    <wsdl:part name="parameters" element="ns1:Errors" />
+  </wsdl:message>
+  <wsdl:message name="GenericID">
+    <wsdl:part name="parameters" element="ns2:GenericID" />
+  </wsdl:message>
+  <wsdl:message name="Fabric">
+    <wsdl:part name="parameters" element="ns0:Fabric" />
+  </wsdl:message>
+  <wsdl:message name="Errors">
+    <wsdl:part name="parameters" element="ns1:Errors" />
+  </wsdl:message>
+  <wsdl:message name="GenericID2">
+    <wsdl:part name="parameters" element="ns2:GenericID" />
+  </wsdl:message>
+  <wsdl:message name="GarmentStyle2">
+    <wsdl:part name="parameters" element="ns0:GarmentStyle" />
+  </wsdl:message>
+  <wsdl:message name="Errors3">
+    <wsdl:part name="parameters" element="ns1:Errors" />
+  </wsdl:message>
+  <wsdl:message name="GarmentStyle3">
+    <wsdl:part name="parameters" element="ns0:GarmentStyle" />
+  </wsdl:message>
+  <wsdl:message name="UpdateResult">
+    <wsdl:part name="parameters" element="ns0:UpdateResult" />
+  </wsdl:message>
+  <wsdl:message name="ReleaseProduct">
+    <wsdl:part name="parameters" element="ns4:ReleaseProduct" />
+  </wsdl:message>
+  <wsdl:message name="GarmentStyle">
+    <wsdl:part name="parameters" element="ns0:GarmentStyle" />
+  </wsdl:message>
+  <wsdl:message name="ColorwayQry2">
+    <wsdl:part name="parameters" element="ns0:ColorwayQry" />
+  </wsdl:message>
+  <wsdl:message name="Colorways">
+    <wsdl:part name="parameters" element="ns0:Colorways" />
+  </wsdl:message>
+  <wsdl:message name="GenericID4">
+    <wsdl:part name="parameters" element="ns2:GenericID" />
+  </wsdl:message>
+  <wsdl:message name="GenericID5">
+    <wsdl:part name="parameters" element="ns2:GenericID" />
+  </wsdl:message>
+  <wsdl:message name="Errors8">
+    <wsdl:part name="parameters" element="ns1:Errors" />
+  </wsdl:message>
+  <wsdl:message name="ArrayOfSelectionFilter2">
+    <wsdl:part name="parameters" element="ns2:ArrayOfSelectionFilter" />
+  </wsdl:message>
+  <wsdl:message name="GarmentStyles">
+    <wsdl:part name="parameters" element="ns0:GarmentStyles" />
+  </wsdl:message>
+  <wsdl:message name="Errors4">
+    <wsdl:part name="parameters" element="ns1:Errors" />
+  </wsdl:message>
+  <wsdl:message name="ArrayOfSelectionFilter3">
+    <wsdl:part name="parameters" element="ns2:ArrayOfSelectionFilter" />
+  </wsdl:message>
+  <wsdl:message name="TrimItems">
+    <wsdl:part name="parameters" element="ns0:TrimItems" />
+  </wsdl:message>
+  <wsdl:message name="Errors6">
+    <wsdl:part name="parameters" element="ns1:Errors" />
+  </wsdl:message>
+  <wsdl:message name="EmptyQry">
+    <wsdl:part name="parameters" element="ns0:EmptyQry" />
+  </wsdl:message>
+  <wsdl:message name="MapResultList">
+    <wsdl:part name="parameters" element="ns0:MapResultList" />
+  </wsdl:message>
+  <wsdl:message name="ArrayOfSelectionFilter">
+    <wsdl:part name="parameters" element="ns2:ArrayOfSelectionFilter" />
+  </wsdl:message>
+  <wsdl:message name="FabricItems">
+    <wsdl:part name="parameters" element="ns0:FabricItems" />
+  </wsdl:message>
+  <wsdl:message name="Errors2">
+    <wsdl:part name="parameters" element="ns1:Errors" />
+  </wsdl:message>
+  <wsdl:portType name="portType">
+    <wsdl:operation name="AccessInstantNoodleOp">
+      <wsdl:input message="tns:ColorwayQry" />
+      <wsdl:output message="tns:error" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTrimPartByIdOp">
+      <wsdl:input message="tns:GenericID3" />
+      <wsdl:output message="tns:TrimItem" />
+      <wsdl:fault name="fault1" message="tns:Errors5" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGoOp">
+      <wsdl:input message="tns:UpdateGO" />
+      <wsdl:output message="tns:UpdateGOResponse" />
+      <wsdl:fault name="fault1" message="tns:Errors9" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryGoOp">
+      <wsdl:input message="tns:QueryGO" />
+      <wsdl:output message="tns:QueryGOResponse" />
+      <wsdl:fault name="fault1" message="tns:Errors7" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFabricPartByIdOp">
+      <wsdl:input message="tns:GenericID" />
+      <wsdl:output message="tns:Fabric" />
+      <wsdl:fault name="fault1" message="tns:Errors" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductByIdOp">
+      <wsdl:input message="tns:GenericID2" />
+      <wsdl:output message="tns:GarmentStyle2" />
+      <wsdl:fault name="fault1" message="tns:Errors3" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductOp">
+      <wsdl:input message="tns:GarmentStyle3" />
+      <wsdl:output message="tns:UpdateResult" />
+    </wsdl:operation>
+    <wsdl:operation name="GarmentReleaseOp">
+      <wsdl:input message="tns:ReleaseProduct" />
+      <wsdl:output message="tns:GarmentStyle" />
+    </wsdl:operation>
+    <wsdl:operation name="GetColorWaysOp">
+      <wsdl:input message="tns:ColorwayQry2" />
+      <wsdl:output message="tns:Colorways" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProductByIdOp">
+      <wsdl:input message="tns:GenericID4" />
+      <wsdl:output message="tns:GenericID5" />
+      <wsdl:fault name="fault1" message="tns:Errors8" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductListOp">
+      <wsdl:input message="tns:ArrayOfSelectionFilter2" />
+      <wsdl:output message="tns:GarmentStyles" />
+      <wsdl:fault name="fault1" message="tns:Errors4" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTrimPartListOp">
+      <wsdl:input message="tns:ArrayOfSelectionFilter3" />
+      <wsdl:output message="tns:TrimItems" />
+      <wsdl:fault name="fault1" message="tns:Errors6" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGarmentPartListOp">
+      <wsdl:input message="tns:EmptyQry" />
+      <wsdl:output message="tns:MapResultList" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFabricPartListOp">
+      <wsdl:input message="tns:ArrayOfSelectionFilter" />
+      <wsdl:output message="tns:FabricItems" />
+      <wsdl:fault name="fault1" message="tns:Errors2" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="intfwsAccessInstantNoodleEndpoint0Binding" type="tns:portType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AccessInstantNoodleOp">
+      <soap:operation soapAction="/interface/intfAccessInstantNoodle-service.serviceagent/intfwsAccessInstantNoodleEndpoint0/AccessInstantNoodleOp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrimPartByIdOp">
+      <soap:operation soapAction="/interface/intfAccessInstantNoodle-service.serviceagent/intfwsAccessInstantNoodleEndpoint0/GetTrimPartByIdOp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="fault1">
+        <soap:fault use="literal" name="fault1" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGoOp">
+      <soap:operation soapAction="/interface/intfAccessInstantNoodle-service.serviceagent/intfwsAccessInstantNoodleEndpoint0/UpdateGoOp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="fault1">
+        <soap:fault use="literal" name="fault1" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueryGoOp">
+      <soap:operation soapAction="/interface/intfAccessInstantNoodle-service.serviceagent/intfwsAccessInstantNoodleEndpoint0/QueryGoOp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="fault1">
+        <soap:fault use="literal" name="fault1" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFabricPartByIdOp">
+      <soap:operation soapAction="/interface/intfAccessInstantNoodle-service.serviceagent/intfwsAccessInstantNoodleEndpoint0/GetFabricPartByIdOp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="fault1">
+        <soap:fault use="literal" name="fault1" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductByIdOp">
+      <soap:operation soapAction="/interface/intfAccessInstantNoodle-service.serviceagent/intfwsAccessInstantNoodleEndpoint0/GetProductByIdOp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="fault1">
+        <soap:fault use="literal" name="fault1" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductOp">
+      <soap:operation soapAction="/interface/intfAccessInstantNoodle-service.serviceagent/intfwsAccessInstantNoodleEndpoint0/UpdateProductOp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GarmentReleaseOp">
+      <soap:operation soapAction="/interface/intfAccessInstantNoodle-service.serviceagent/intfwsAccessInstantNoodleEndpoint0/GarmentReleaseOp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetColorWaysOp">
+      <soap:operation soapAction="/interface/intfAccessInstantNoodle-service.serviceagent/intfwsAccessInstantNoodleEndpoint0/GetColorWaysOp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProductByIdOp">
+      <soap:operation soapAction="/interface/intfAccessInstantNoodle-service.serviceagent/intfwsAccessInstantNoodleEndpoint0/RemoveProductByIdOp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="fault1">
+        <soap:fault use="literal" name="fault1" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductListOp">
+      <soap:operation soapAction="/interface/intfAccessInstantNoodle-service.serviceagent/intfwsAccessInstantNoodleEndpoint0/GetProductListOp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="fault1">
+        <soap:fault use="literal" name="fault1" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrimPartListOp">
+      <soap:operation soapAction="/interface/intfAccessInstantNoodle-service.serviceagent/intfwsAccessInstantNoodleEndpoint0/GetTrimPartListOp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="fault1">
+        <soap:fault use="literal" name="fault1" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetGarmentPartListOp">
+      <soap:operation soapAction="/interface/intfAccessInstantNoodle-service.serviceagent/intfwsAccessInstantNoodleEndpoint0/GetGarmentPartListOp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFabricPartListOp">
+      <soap:operation soapAction="/interface/intfAccessInstantNoodle-service.serviceagent/intfwsAccessInstantNoodleEndpoint0/GetFabricPartListOp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="fault1">
+        <soap:fault use="literal" name="fault1" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="intfAccessInstantNoodle-service">
+    <wsdl:port name="intfwsAccessInstantNoodleEndpoint0" binding="tns:intfwsAccessInstantNoodleEndpoint0Binding">
+      <soap:address location="http://localhost:6115/interface/intfAccessInstantNoodle-service.serviceagent/intfwsAccessInstantNoodleEndpoint0" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="ArasInnovatorService.GarmentStyleManagementWS" CodeBehind="GarmentStyleManagementWS.svc.cs" %>

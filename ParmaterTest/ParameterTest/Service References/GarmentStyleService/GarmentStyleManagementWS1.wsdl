@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://esquel.com/ArasService/GarmentStyleManagementWS" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://esquel.com/ArasService/GarmentStyleManagementWS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://esquel.com/ArasService/GarmentStyleManagementWS/Imports">
+      <xsd:import schemaLocation="http://localhost:49504/GarmentStyleManagementWS.svc?xsd=xsd0" namespace="http://esquel.com/ArasService/GarmentStyleManagementWS" />
+      <xsd:import schemaLocation="http://localhost:49504/GarmentStyleManagementWS.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:49504/GarmentStyleManagementWS.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel" />
+      <xsd:import schemaLocation="http://localhost:49504/GarmentStyleManagementWS.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:49504/GarmentStyleManagementWS.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/ArasInnovatorService.Common" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IGarmentStyleManagementWS_getGarmentStyleList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getGarmentStyleList" />
+  </wsdl:message>
+  <wsdl:message name="IGarmentStyleManagementWS_getGarmentStyleList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getGarmentStyleListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGarmentStyleManagementWS_getGarmentStyleById_InputMessage">
+    <wsdl:part name="parameters" element="tns:getGarmentStyleById" />
+  </wsdl:message>
+  <wsdl:message name="IGarmentStyleManagementWS_getGarmentStyleById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getGarmentStyleByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGarmentStyleManagementWS_createGarmentStyle_InputMessage">
+    <wsdl:part name="parameters" element="tns:createGarmentStyle" />
+  </wsdl:message>
+  <wsdl:message name="IGarmentStyleManagementWS_createGarmentStyle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createGarmentStyleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGarmentStyleManagementWS_updateGarmentStyle_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateGarmentStyle" />
+  </wsdl:message>
+  <wsdl:message name="IGarmentStyleManagementWS_updateGarmentStyle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateGarmentStyleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGarmentStyleManagementWS_removeGarmentStyleById_InputMessage">
+    <wsdl:part name="parameters" element="tns:removeGarmentStyleById" />
+  </wsdl:message>
+  <wsdl:message name="IGarmentStyleManagementWS_removeGarmentStyleById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:removeGarmentStyleByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGarmentStyleManagementWS_getGarmentStyleImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:getGarmentStyleImage" />
+  </wsdl:message>
+  <wsdl:message name="IGarmentStyleManagementWS_getGarmentStyleImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getGarmentStyleImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGarmentStyleManagementWS_CreateAndFilter_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAndFilter" />
+  </wsdl:message>
+  <wsdl:message name="IGarmentStyleManagementWS_CreateAndFilter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAndFilterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGarmentStyleManagementWS_CreateOrFilter_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrFilter" />
+  </wsdl:message>
+  <wsdl:message name="IGarmentStyleManagementWS_CreateOrFilter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrFilterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGarmentStyleManagementWS_CreateLeaf_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLeaf" />
+  </wsdl:message>
+  <wsdl:message name="IGarmentStyleManagementWS_CreateLeaf_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLeafResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IGarmentStyleManagementWS">
+    <wsdl:operation name="getGarmentStyleList">
+      <wsdl:input wsaw:Action="http://esquel.com/ArasService/GarmentStyleManagementWS/IGarmentStyleManagementWS/getGarmentStyleList" message="tns:IGarmentStyleManagementWS_getGarmentStyleList_InputMessage" />
+      <wsdl:output wsaw:Action="http://esquel.com/ArasService/GarmentStyleManagementWS/IGarmentStyleManagementWS/getGarmentStyleListResponse" message="tns:IGarmentStyleManagementWS_getGarmentStyleList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getGarmentStyleById">
+      <wsdl:input wsaw:Action="http://esquel.com/ArasService/GarmentStyleManagementWS/IGarmentStyleManagementWS/getGarmentStyleById" message="tns:IGarmentStyleManagementWS_getGarmentStyleById_InputMessage" />
+      <wsdl:output wsaw:Action="http://esquel.com/ArasService/GarmentStyleManagementWS/IGarmentStyleManagementWS/getGarmentStyleByIdResponse" message="tns:IGarmentStyleManagementWS_getGarmentStyleById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createGarmentStyle">
+      <wsdl:input wsaw:Action="http://esquel.com/ArasService/GarmentStyleManagementWS/IGarmentStyleManagementWS/createGarmentStyle" message="tns:IGarmentStyleManagementWS_createGarmentStyle_InputMessage" />
+      <wsdl:output wsaw:Action="http://esquel.com/ArasService/GarmentStyleManagementWS/IGarmentStyleManagementWS/createGarmentStyleResponse" message="tns:IGarmentStyleManagementWS_createGarmentStyle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateGarmentStyle">
+      <wsdl:input wsaw:Action="http://esquel.com/ArasService/GarmentStyleManagementWS/IGarmentStyleManagementWS/updateGarmentStyle" message="tns:IGarmentStyleManagementWS_updateGarmentStyle_InputMessage" />
+      <wsdl:output wsaw:Action="http://esquel.com/ArasService/GarmentStyleManagementWS/IGarmentStyleManagementWS/updateGarmentStyleResponse" message="tns:IGarmentStyleManagementWS_updateGarmentStyle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="removeGarmentStyleById">
+      <wsdl:input wsaw:Action="http://esquel.com/ArasService/GarmentStyleManagementWS/IGarmentStyleManagementWS/removeGarmentStyleById" message="tns:IGarmentStyleManagementWS_removeGarmentStyleById_InputMessage" />
+      <wsdl:output wsaw:Action="http://esquel.com/ArasService/GarmentStyleManagementWS/IGarmentStyleManagementWS/removeGarmentStyleByIdResponse" message="tns:IGarmentStyleManagementWS_removeGarmentStyleById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getGarmentStyleImage">
+      <wsdl:input wsaw:Action="http://esquel.com/ArasService/GarmentStyleManagementWS/IGarmentStyleManagementWS/getGarmentStyleImage" message="tns:IGarmentStyleManagementWS_getGarmentStyleImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://esquel.com/ArasService/GarmentStyleManagementWS/IGarmentStyleManagementWS/getGarmentStyleImageResponse" message="tns:IGarmentStyleManagementWS_getGarmentStyleImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAndFilter">
+      <wsdl:input wsaw:Action="http://esquel.com/ArasService/GarmentStyleManagementWS/IGarmentStyleManagementWS/CreateAndFilter" message="tns:IGarmentStyleManagementWS_CreateAndFilter_InputMessage" />
+      <wsdl:output wsaw:Action="http://esquel.com/ArasService/GarmentStyleManagementWS/IGarmentStyleManagementWS/CreateAndFilterResponse" message="tns:IGarmentStyleManagementWS_CreateAndFilter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrFilter">
+      <wsdl:input wsaw:Action="http://esquel.com/ArasService/GarmentStyleManagementWS/IGarmentStyleManagementWS/CreateOrFilter" message="tns:IGarmentStyleManagementWS_CreateOrFilter_InputMessage" />
+      <wsdl:output wsaw:Action="http://esquel.com/ArasService/GarmentStyleManagementWS/IGarmentStyleManagementWS/CreateOrFilterResponse" message="tns:IGarmentStyleManagementWS_CreateOrFilter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateLeaf">
+      <wsdl:input wsaw:Action="http://esquel.com/ArasService/GarmentStyleManagementWS/IGarmentStyleManagementWS/CreateLeaf" message="tns:IGarmentStyleManagementWS_CreateLeaf_InputMessage" />
+      <wsdl:output wsaw:Action="http://esquel.com/ArasService/GarmentStyleManagementWS/IGarmentStyleManagementWS/CreateLeafResponse" message="tns:IGarmentStyleManagementWS_CreateLeaf_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

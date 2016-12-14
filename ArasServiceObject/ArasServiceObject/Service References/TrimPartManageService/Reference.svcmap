@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="05200a56-d0a1-4340-90b5-9cba09d99a2f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:49504/TrimPartManageService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TrimPartManageService.xsd" MetadataType="Schema" ID="46f73a6c-1031-49dd-93cc-4eb26d4b1a6c" SourceId="1" SourceUrl="http://localhost:49504/TrimPartManageService.svc?xsd=xsd3" />
+    <MetadataFile FileName="TrimPartManageService1.xsd" MetadataType="Schema" ID="f25a2342-0edb-43e9-b21a-eb0918070bf3" SourceId="1" SourceUrl="http://localhost:49504/TrimPartManageService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TrimPartManageService2.xsd" MetadataType="Schema" ID="14cba72c-a112-4f46-ad88-b9493e99bfbb" SourceId="1" SourceUrl="http://localhost:49504/TrimPartManageService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TrimPartManageService.wsdl" MetadataType="Wsdl" ID="c0d3c06e-82b0-41e3-a4fb-1bf04a77c26e" SourceId="1" SourceUrl="http://localhost:49504/TrimPartManageService.svc?wsdl" />
+    <MetadataFile FileName="TrimPartManageService3.xsd" MetadataType="Schema" ID="1ebebaaa-e681-4148-9066-8f36d7e80f2b" SourceId="1" SourceUrl="http://localhost:49504/TrimPartManageService.svc?xsd=xsd4" />
+    <MetadataFile FileName="TrimPartManageService.disco" MetadataType="Disco" ID="50f10f9a-94af-4611-908e-49a43195ff92" SourceId="1" SourceUrl="http://localhost:49504/TrimPartManageService.svc?disco" />
+    <MetadataFile FileName="TrimPartManageService1.wsdl" MetadataType="Wsdl" ID="e3b54756-9d29-4a10-a020-99dbef3e0761" SourceId="1" SourceUrl="http://localhost:49504/TrimPartManageService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="TrimPartManageService4.xsd" MetadataType="Schema" ID="59d7df64-6e9f-4113-946d-77ffa38b240f" SourceId="1" SourceUrl="http://localhost:49504/TrimPartManageService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

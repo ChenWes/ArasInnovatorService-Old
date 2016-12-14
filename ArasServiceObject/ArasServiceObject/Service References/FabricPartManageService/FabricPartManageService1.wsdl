@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://esquel.com/ArasService/FabricPartManageService" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://esquel.com/ArasService/FabricPartManageService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://esquel.com/ArasService/FabricPartManageService/Imports">
+      <xsd:import schemaLocation="http://localhost:49504/FabricPartManageService.svc?xsd=xsd0" namespace="http://esquel.com/ArasService/FabricPartManageService" />
+      <xsd:import schemaLocation="http://localhost:49504/FabricPartManageService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:49504/FabricPartManageService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ArasInnovatorService.Common" />
+      <xsd:import schemaLocation="http://localhost:49504/FabricPartManageService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel.PublicModel" />
+      <xsd:import schemaLocation="http://localhost:49504/FabricPartManageService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFabricPartManageService_GetFabricPartList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFabricPartList" />
+  </wsdl:message>
+  <wsdl:message name="IFabricPartManageService_GetFabricPartList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFabricPartListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFabricPartManageService_GetFabricPartByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFabricPartByID" />
+  </wsdl:message>
+  <wsdl:message name="IFabricPartManageService_GetFabricPartByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFabricPartByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFabricPartManageService_GetFabricPartImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFabricPartImage" />
+  </wsdl:message>
+  <wsdl:message name="IFabricPartManageService_GetFabricPartImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFabricPartImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFabricPartManageService_CreateAndFilter_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAndFilter" />
+  </wsdl:message>
+  <wsdl:message name="IFabricPartManageService_CreateAndFilter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAndFilterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFabricPartManageService_CreateOrFilter_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrFilter" />
+  </wsdl:message>
+  <wsdl:message name="IFabricPartManageService_CreateOrFilter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrFilterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFabricPartManageService_CreateLeaf_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLeaf" />
+  </wsdl:message>
+  <wsdl:message name="IFabricPartManageService_CreateLeaf_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLeafResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IFabricPartManageService">
+    <wsdl:operation name="GetFabricPartList">
+      <wsdl:input wsaw:Action="http://esquel.com/ArasService/FabricPartManageService/IFabricPartManageService/GetFabricPartList" message="tns:IFabricPartManageService_GetFabricPartList_InputMessage" />
+      <wsdl:output wsaw:Action="http://esquel.com/ArasService/FabricPartManageService/IFabricPartManageService/GetFabricPartListResponse" message="tns:IFabricPartManageService_GetFabricPartList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFabricPartByID">
+      <wsdl:input wsaw:Action="http://esquel.com/ArasService/FabricPartManageService/IFabricPartManageService/GetFabricPartByID" message="tns:IFabricPartManageService_GetFabricPartByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://esquel.com/ArasService/FabricPartManageService/IFabricPartManageService/GetFabricPartByIDResponse" message="tns:IFabricPartManageService_GetFabricPartByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFabricPartImage">
+      <wsdl:input wsaw:Action="http://esquel.com/ArasService/FabricPartManageService/IFabricPartManageService/GetFabricPartImage" message="tns:IFabricPartManageService_GetFabricPartImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://esquel.com/ArasService/FabricPartManageService/IFabricPartManageService/GetFabricPartImageResponse" message="tns:IFabricPartManageService_GetFabricPartImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAndFilter">
+      <wsdl:input wsaw:Action="http://esquel.com/ArasService/FabricPartManageService/IFabricPartManageService/CreateAndFilter" message="tns:IFabricPartManageService_CreateAndFilter_InputMessage" />
+      <wsdl:output wsaw:Action="http://esquel.com/ArasService/FabricPartManageService/IFabricPartManageService/CreateAndFilterResponse" message="tns:IFabricPartManageService_CreateAndFilter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrFilter">
+      <wsdl:input wsaw:Action="http://esquel.com/ArasService/FabricPartManageService/IFabricPartManageService/CreateOrFilter" message="tns:IFabricPartManageService_CreateOrFilter_InputMessage" />
+      <wsdl:output wsaw:Action="http://esquel.com/ArasService/FabricPartManageService/IFabricPartManageService/CreateOrFilterResponse" message="tns:IFabricPartManageService_CreateOrFilter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateLeaf">
+      <wsdl:input wsaw:Action="http://esquel.com/ArasService/FabricPartManageService/IFabricPartManageService/CreateLeaf" message="tns:IFabricPartManageService_CreateLeaf_InputMessage" />
+      <wsdl:output wsaw:Action="http://esquel.com/ArasService/FabricPartManageService/IFabricPartManageService/CreateLeafResponse" message="tns:IFabricPartManageService_CreateLeaf_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

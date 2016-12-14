@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://esquel.com/ArasService/ProductManageService" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://esquel.com/ArasService/ProductManageService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://esquel.com/ArasService/ProductManageService/Imports">
+      <xsd:import schemaLocation="http://localhost:49504/ProductManageService.svc?xsd=xsd0" namespace="http://esquel.com/ArasService/ProductManageService" />
+      <xsd:import schemaLocation="http://localhost:49504/ProductManageService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:49504/ProductManageService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ArasInnovatorService.Common" />
+      <xsd:import schemaLocation="http://localhost:49504/ProductManageService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel.PublicModel" />
+      <xsd:import schemaLocation="http://localhost:49504/ProductManageService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IProductManageService_GetProductList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductList" />
+  </wsdl:message>
+  <wsdl:message name="IProductManageService_GetProductList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductManageService_GetProductByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByID" />
+  </wsdl:message>
+  <wsdl:message name="IProductManageService_GetProductByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductManageService_GetProductImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductImage" />
+  </wsdl:message>
+  <wsdl:message name="IProductManageService_GetProductImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductManageService_CreateProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProduct" />
+  </wsdl:message>
+  <wsdl:message name="IProductManageService_CreateProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductManageService_UpdateProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProduct" />
+  </wsdl:message>
+  <wsdl:message name="IProductManageService_UpdateProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductManageService_RemoveProductByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveProductByID" />
+  </wsdl:message>
+  <wsdl:message name="IProductManageService_RemoveProductByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveProductByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductManageService_CreateAndFilter_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAndFilter" />
+  </wsdl:message>
+  <wsdl:message name="IProductManageService_CreateAndFilter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAndFilterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductManageService_CreateOrFilter_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrFilter" />
+  </wsdl:message>
+  <wsdl:message name="IProductManageService_CreateOrFilter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrFilterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductManageService_CreateLeaf_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLeaf" />
+  </wsdl:message>
+  <wsdl:message name="IProductManageService_CreateLeaf_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLeafResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IProductManageService">
+    <wsdl:operation name="GetProductList">
+      <wsdl:input wsaw:Action="http://esquel.com/ArasService/ProductManageService/IProductManageService/GetProductList" message="tns:IProductManageService_GetProductList_InputMessage" />
+      <wsdl:output wsaw:Action="http://esquel.com/ArasService/ProductManageService/IProductManageService/GetProductListResponse" message="tns:IProductManageService_GetProductList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductByID">
+      <wsdl:input wsaw:Action="http://esquel.com/ArasService/ProductManageService/IProductManageService/GetProductByID" message="tns:IProductManageService_GetProductByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://esquel.com/ArasService/ProductManageService/IProductManageService/GetProductByIDResponse" message="tns:IProductManageService_GetProductByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductImage">
+      <wsdl:input wsaw:Action="http://esquel.com/ArasService/ProductManageService/IProductManageService/GetProductImage" message="tns:IProductManageService_GetProductImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://esquel.com/ArasService/ProductManageService/IProductManageService/GetProductImageResponse" message="tns:IProductManageService_GetProductImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateProduct">
+      <wsdl:input wsaw:Action="http://esquel.com/ArasService/ProductManageService/IProductManageService/CreateProduct" message="tns:IProductManageService_CreateProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://esquel.com/ArasService/ProductManageService/IProductManageService/CreateProductResponse" message="tns:IProductManageService_CreateProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <wsdl:input wsaw:Action="http://esquel.com/ArasService/ProductManageService/IProductManageService/UpdateProduct" message="tns:IProductManageService_UpdateProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://esquel.com/ArasService/ProductManageService/IProductManageService/UpdateProductResponse" message="tns:IProductManageService_UpdateProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProductByID">
+      <wsdl:input wsaw:Action="http://esquel.com/ArasService/ProductManageService/IProductManageService/RemoveProductByID" message="tns:IProductManageService_RemoveProductByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://esquel.com/ArasService/ProductManageService/IProductManageService/RemoveProductByIDResponse" message="tns:IProductManageService_RemoveProductByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAndFilter">
+      <wsdl:input wsaw:Action="http://esquel.com/ArasService/ProductManageService/IProductManageService/CreateAndFilter" message="tns:IProductManageService_CreateAndFilter_InputMessage" />
+      <wsdl:output wsaw:Action="http://esquel.com/ArasService/ProductManageService/IProductManageService/CreateAndFilterResponse" message="tns:IProductManageService_CreateAndFilter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrFilter">
+      <wsdl:input wsaw:Action="http://esquel.com/ArasService/ProductManageService/IProductManageService/CreateOrFilter" message="tns:IProductManageService_CreateOrFilter_InputMessage" />
+      <wsdl:output wsaw:Action="http://esquel.com/ArasService/ProductManageService/IProductManageService/CreateOrFilterResponse" message="tns:IProductManageService_CreateOrFilter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateLeaf">
+      <wsdl:input wsaw:Action="http://esquel.com/ArasService/ProductManageService/IProductManageService/CreateLeaf" message="tns:IProductManageService_CreateLeaf_InputMessage" />
+      <wsdl:output wsaw:Action="http://esquel.com/ArasService/ProductManageService/IProductManageService/CreateLeafResponse" message="tns:IProductManageService_CreateLeaf_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

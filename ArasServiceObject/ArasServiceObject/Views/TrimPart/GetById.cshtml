@@ -1,0 +1,38 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/jqPaginator.css" rel="stylesheet" />
+
+<script src="~/Scripts/jquery-1.7.1.js"></script>
+<script src="~/Scripts/knockout-3.3.0.js"></script>
+<script src="~/Scripts/jqPaginator.js"></script>
+<script type="text/javascript">
+    //var data=[{"part_number":"1111","description":"1111","cost":181.00},{"part_number":"682-26-25-0.6790392870973262","description":"682-26-25-0.6790392870973262","cost":682.26},{"part_number":"ttt","description":"ttt","cost":123.00},{"part_number":"677-26-25-0.1704011153592021","description":"677-26-25-0.1704011153592021","cost":677.26},{"part_number":"657-26-25-0.6784387102297944","description":"657-26-25-0.6784387102297944","cost":657.26},{"ExtensionData":{},"part_number":"673-26-25-0.1045917929450999","description":"673-26-25-0.1045917929450999","cost":673.26},{"part_number":"669-26-25-0.8054342656407294","description":"669-26-25-0.8054342656407294","cost":669.26},{"part_number":"456","description":"456","cost":123.00},{"part_number":"663-26-25-0.10129137507062647","description":"663-26-25-0.10129137507062647","cost":663.26},{"part_number":"676-26-25-0.3367287401749791","description":"676-26-25-0.3367287401749791","cost":676.26},{"part_number":"123456","description":"123456","cost":186.00},{"part_number":"659-26-25-0.8007861373092757","description":"659-26-25-0.8007861373092757","cost":659.26},{"part_number":"679-26-25-0.7647759548576487","description":"679-26-25-0.7647759548576487","cost":679.26},{"part_number":"TP1","description":"TP1","cost":500.00},{"part_number":"684-26-25-0.6011885990036627","description":"684-26-25-0.6011885990036627","cost":684.26},{"part_number":"456","description":"456","cost":123.00},{"part_number":"456","description":"456","cost":999.99},{"part_number":"675-26-25-0.5886413022631855","description":"675-26-25-0.5886413022631855","cost":675.26},{"part_number":"661-26-25-0.8566294866804474","description":"661-26-25-0.8566294866804474","cost":661.26},{"part_number":"123","description":"123","cost":10.95}];
+    var data=@Html.Raw(ViewBag.Data);
+    var totalPage=@ViewBag.TotalPage;
+    var currentPage=@ViewBag.CurrentPage;
+</script>
+<script src="~/Scripts/trimpart/trimpart.js"></script>
+<table class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <td>item_number</td>
+            <td>cn_cust_style</td>
+            <td>cn_fds_no</td>
+            <td class="text-center" colspan="2">Operation</td>
+        </tr>
+    </thead>
+    <tbody data-bind="foreach:part">
+        <tr>
+            <td data-bind="text:ITEM_NUMBER"></td>
+            <td data-bind="text:ITEM_NUMBER"></td>
+            <td data-bind="text:ITEM_NUMBER"></td>
+            <td class="text-center"><a href="javascript:" data-bind="click:$root.edit">编辑</a></td>
+            <td class="text-center"><a href="javascript:" data-bind="click:$root.remove">删除</a></td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    <ul class="pagination" id="personPagination"></ul>
+</div>

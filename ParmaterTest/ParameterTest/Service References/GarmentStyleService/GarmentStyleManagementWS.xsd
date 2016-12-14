@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://esquel.com/ArasService/GarmentStyleManagementWS" elementFormDefault="qualified" targetNamespace="http://esquel.com/ArasService/GarmentStyleManagementWS" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:49504/GarmentStyleManagementWS.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel" />
+  <xs:import schemaLocation="http://localhost:49504/GarmentStyleManagementWS.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/ArasInnovatorService.Common" />
+  <xs:element name="getGarmentStyleList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel" minOccurs="0" name="pi_GarmentStyleClass" nillable="true" type="q1:GarmentStyleClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getGarmentStyleListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel" minOccurs="0" name="getGarmentStyleListResult" nillable="true" type="q2:GarmentStyleClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getGarmentStyleById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel" minOccurs="0" name="pi_GarmentStyleClass" nillable="true" type="q3:GarmentStyleClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getGarmentStyleByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel" minOccurs="0" name="getGarmentStyleByIdResult" nillable="true" type="q4:GarmentStyleClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createGarmentStyle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel" minOccurs="0" name="pi_GarmentStyleClass" nillable="true" type="q5:GarmentStyleClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createGarmentStyleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel" minOccurs="0" name="createGarmentStyleResult" nillable="true" type="q6:GarmentStyleClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateGarmentStyle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel" minOccurs="0" name="pi_GarmentStyleClass" nillable="true" type="q7:GarmentStyleClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateGarmentStyleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel" minOccurs="0" name="updateGarmentStyleResult" nillable="true" type="q8:GarmentStyleClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="removeGarmentStyleById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel" minOccurs="0" name="pi_GarmentStyleClass" nillable="true" type="q9:GarmentStyleClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="removeGarmentStyleByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel" minOccurs="0" name="removeGarmentStyleByIdResult" nillable="true" type="q10:GarmentStyleClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getGarmentStyleImage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel" minOccurs="0" name="pi_GarmentStyleClass" nillable="true" type="q11:GarmentStyleClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getGarmentStyleImageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel" minOccurs="0" name="getGarmentStyleImageResult" nillable="true" type="q12:GarmentStyleClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateAndFilter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/ArasInnovatorService.Common" minOccurs="0" name="filters" nillable="true" type="q13:ArrayOfSelectionFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateAndFilterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/ArasInnovatorService.Common" minOccurs="0" name="CreateAndFilterResult" nillable="true" type="q14:SelectionFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOrFilter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/ArasInnovatorService.Common" minOccurs="0" name="filters" nillable="true" type="q15:ArrayOfSelectionFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOrFilterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/ArasInnovatorService.Common" minOccurs="0" name="CreateOrFilterResult" nillable="true" type="q16:SelectionFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateLeaf">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="attributeName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="searchOperator" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="filterValue" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateLeafResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/ArasInnovatorService.Common" minOccurs="0" name="CreateLeafResult" nillable="true" type="q17:SelectionFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

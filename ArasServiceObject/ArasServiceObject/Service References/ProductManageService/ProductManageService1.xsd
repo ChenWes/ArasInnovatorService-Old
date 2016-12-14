@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://esquel.com/ArasService/ProductManageService" elementFormDefault="qualified" targetNamespace="http://esquel.com/ArasService/ProductManageService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:49504/ProductManageService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ArasInnovatorService.Common" />
+  <xs:import schemaLocation="http://localhost:49504/ProductManageService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel.PublicModel" />
+  <xs:element name="GetProductList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ArasInnovatorService.Common" minOccurs="0" name="pi_selectionFilter" nillable="true" type="q1:SelectionFilter" />
+        <xs:element minOccurs="0" name="pi_pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pi_pageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel.PublicModel" minOccurs="0" name="GetProductListResult" nillable="true" type="q2:ProductClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pi_productID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel.PublicModel" minOccurs="0" name="GetProductByIDResult" nillable="true" type="q3:ProductClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductImage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pi_productID" nillable="true" type="xs:string" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel.PublicModel" minOccurs="0" name="pi_getImageType" type="q4:eumImageType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductImageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel.PublicModel" minOccurs="0" name="GetProductImageResult" nillable="true" type="q5:ProductClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateProduct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel.PublicModel" minOccurs="0" name="pi_productList" nillable="true" type="q6:Products" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateProductResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel.PublicModel" minOccurs="0" name="CreateProductResult" nillable="true" type="q7:ProductClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProduct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel.PublicModel" minOccurs="0" name="pi_productList" nillable="true" type="q8:Products" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProductResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel.PublicModel" minOccurs="0" name="UpdateProductResult" nillable="true" type="q9:ProductClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveProductByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pi_productID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveProductByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ArasInnovatorService.ArasModel.PublicModel" minOccurs="0" name="RemoveProductByIDResult" nillable="true" type="q10:ProductClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateAndFilter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/ArasInnovatorService.Common" minOccurs="0" name="filters" nillable="true" type="q11:ArrayOfSelectionFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateAndFilterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/ArasInnovatorService.Common" minOccurs="0" name="CreateAndFilterResult" nillable="true" type="q12:SelectionFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOrFilter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/ArasInnovatorService.Common" minOccurs="0" name="filters" nillable="true" type="q13:ArrayOfSelectionFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOrFilterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/ArasInnovatorService.Common" minOccurs="0" name="CreateOrFilterResult" nillable="true" type="q14:SelectionFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateLeaf">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="attributeName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="searchOperator" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="filterValue" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateLeafResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/ArasInnovatorService.Common" minOccurs="0" name="CreateLeafResult" nillable="true" type="q15:SelectionFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

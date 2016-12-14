@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fc64aff8-a01d-4104-9247-f5b8d40bad48" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:49504/FabricPartManageService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FabricPartManageService.disco" MetadataType="Disco" ID="e905faa9-332d-4729-9f72-a23907d9571a" SourceId="1" SourceUrl="http://localhost:49504/FabricPartManageService.svc?disco" />
+    <MetadataFile FileName="FabricPartManageService.xsd" MetadataType="Schema" ID="3aef0070-a3b3-4191-8b23-f24665bc34e1" SourceId="1" SourceUrl="http://localhost:49504/FabricPartManageService.svc?xsd=xsd4" />
+    <MetadataFile FileName="FabricPartManageService1.xsd" MetadataType="Schema" ID="c1e9ed2c-75e3-4ce4-8772-5fb0d0dba36d" SourceId="1" SourceUrl="http://localhost:49504/FabricPartManageService.svc?xsd=xsd0" />
+    <MetadataFile FileName="FabricPartManageService.wsdl" MetadataType="Wsdl" ID="b0e5b99f-51e6-4356-8296-85438804eba5" SourceId="1" SourceUrl="http://localhost:49504/FabricPartManageService.svc?wsdl" />
+    <MetadataFile FileName="FabricPartManageService2.xsd" MetadataType="Schema" ID="859ce7a4-9e2d-46cb-a96a-3485713a3b67" SourceId="1" SourceUrl="http://localhost:49504/FabricPartManageService.svc?xsd=xsd3" />
+    <MetadataFile FileName="FabricPartManageService1.wsdl" MetadataType="Wsdl" ID="8448178c-9c2f-4258-9f80-eb75f3b5abd1" SourceId="1" SourceUrl="http://localhost:49504/FabricPartManageService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="FabricPartManageService3.xsd" MetadataType="Schema" ID="29f35c8c-0b7b-4806-b16a-3710740afd62" SourceId="1" SourceUrl="http://localhost:49504/FabricPartManageService.svc?xsd=xsd1" />
+    <MetadataFile FileName="FabricPartManageService4.xsd" MetadataType="Schema" ID="7ab49709-c5d2-4107-82a8-fd700b034305" SourceId="1" SourceUrl="http://localhost:49504/FabricPartManageService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

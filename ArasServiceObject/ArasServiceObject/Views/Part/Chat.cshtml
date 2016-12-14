@@ -1,0 +1,148 @@
+﻿
+@{
+    ViewBag.Title = "Chat";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chat</h2>
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Base Conditions</h3>
+        </div>
+        <div class="panel-body">
+            <!--查询条件控件列表-->
+            <div class="row">
+                <form class="form-horizontal">
+                    <div class="form-group has-success   col-sm-6 col-md-6 col-lg-4">
+                        <label for="txt_Factory" class="col-sm-4 col-md-3 col-lg-4 control-label">BU</label>
+                        <div class="col-sm-8 col-md-8 col-lg-8">
+                            <select class="form-control">
+                                <option value="FACTORY_ID">FACTORY_ID</option>
+                                <option value="PTX">PTX</option>
+                                <option value="TIL">TIL</option>
+                                <option value="LGL">LGL</option>
+                                <option value="CEG">CEG</option>
+                                <option value="CEK">CEK</option>
+                                <option value="YMA">YMA</option>
+                                <option value="YMB">YMB</option>
+                                <option value="EGM">EGM</option>
+                                <option value="EGK">EGK</option>
+                                <option value="EBS">EBS</option>
+                                <option value="WYG">WYG</option>
+                                <option value="GEG">GEG</option>
+                                <option value="NBO">NBO</option>
+                                <option value="YMC">YMC</option>
+                                <option value="EEL">EEL</option>
+                                <option value="EGV">EGV</option>
+                                <option value="MDV">MDV</option>
+                                <option value="CGC">CGC</option>
+                                <option value="HKM1">HKM1</option>
+                                <option value="ZGR">ZGR</option>
+                                <option value="OFTY">OFTY</option>
+                                <option value="TDC">TDC</option>
+                                <option value="CYKG">CYKG</option>
+                                <option value="GEK">GEK</option>
+                                <option value="AGX">AGX</option>
+                                <option value="EPP">EPP</option>
+                                <option value="SGC">SGC</option>
+                                <option value="EEM">EEM</option>
+                                <option value="GEW">GEW</option>
+                                <option value="OMD">OMD</option>
+                                <option value="CAP">CAP</option>
+                                <option value="HET">HET</option>
+                                <option value="YMG">YMG</option>
+                                <option value="EAP">EAP</option>
+                                <option value="EAPL">EAPL</option>
+                                <option value="GES">GES</option>
+                                <option value="EAV">EAV</option>
+                                <option value="VTN">VTN</option>
+                                <option value="VMH">VMH</option>
+                                <option value="MDN">MDN</option>
+                                <option value="GLG">GLG</option>
+                                <option value="TEG">TEG</option>
+                                <option value="FEG">FEG</option>
+                                <option value="EAL">EAL</option>
+                                <option value="GLE">GLE</option>
+                                <option value="EHV">EHV</option>
+                                <option value="GLS">GLS</option>
+                                <option value="ECH">ECH</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 col-md-6 col-lg-4">
+                        <label for="txt_Factory" class="col-sm-4 col-md-3 col-lg-4 control-label">Department</label>
+                        <div class="col-sm-8 col-md-8 col-lg-8">
+                            <select class="form-control">
+                                <option value="FACTORY_ID">Sales A</option>
+                                <option value="PTX">Sales B</option>
+                                <option value="TIL">Sales C</option>
+                                <option value="LGL">Sales D</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="form-group has-error   col-sm-6 col-md-6 col-lg-4">
+                        <label for="txt_Customer" class="col-sm-4 col-md-3 col-lg-4 control-label">Customer</label>
+                        <div class="col-sm-8 col-md-8 col-lg-8">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="txt_Customer" placeholder="Customer" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-info" type="button">...</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group   col-sm-6 col-md-6 col-lg-4">
+                        <label for="txt_SampleType" class="col-sm-4 col-md-3 col-lg-4 control-label">SampleType</label>
+                        <div class="col-sm-8 col-md-8 col-lg-8">
+                            <select class="form-control">
+                                <option value="SizeSet"> Size Set</option>
+                                <option value="LineReview"> Line Review</option>
+                                <option value="FullLine"> Full Line</option>
+                                <option value="Fitting"> Fitting</option>
+                                <option value="MockUp"> MockUp</option>
+                                <option value="Others"> Others</option>
+                                <option value="PPS"> PPS</option>
+                                <option value="Proto"> Proto</option>
+                                <option value="Salesman"> Salesman</option>
+                                <option value="ShowRoom"> Presentation / Showroom</option>
+                                <option value="Virtual"> Virtual</option>
+                                <option value="Quick3D"> Quick 3D</option>
+                                <option value="Bulk"> Bulk</option>
+                                <option value="Photo"> Photo</option>
+                                <option value="Testing"> Testing</option>
+                                <option value="BuyerRev"> Buyer Review</option>
+                                <option value="AD"> AD</option>
+                                <option value="Top"> Top</option>
+                                <option value="JumpSize"> Jump Size Set</option>
+                                <option value="PRS"> PR Sample</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group   col-sm-6 col-md-6 col-lg-4">
+                        <label for="txt_GarmentType" class="col-sm-4 col-md-3 col-lg-4 control-label">GarmentType</label>
+                        <div class="col-sm-8 col-md-8 col-lg-8">
+                            <select class="form-control">
+                                <option>Knit</option>
+                                <option>Wowen</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group   col-sm-6 col-md-6 col-lg-4">
+                        <label for="txt_OrderType" class="col-sm-4 col-md-3 col-lg-4 control-label">OrderType</label>
+                        <div class="col-sm-8 col-md-8 col-lg-8">
+                            <select class="form-control">
+                                <option>GO</option>
+                                <option>SJO</option>
+                                <option>PPO</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
